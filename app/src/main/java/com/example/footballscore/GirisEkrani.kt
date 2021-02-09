@@ -18,7 +18,6 @@ class GirisEkrani : AppCompatActivity() {
         binding = ActivityGirisEkraniBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
 
-
         binding.btnGirisYapiniz.setOnClickListener {
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
@@ -27,7 +26,5 @@ class GirisEkrani : AppCompatActivity() {
             intent = Intent(applicationContext, KayitOl::class.java)
             startActivity(intent)
         }
-
-
     }
 }
