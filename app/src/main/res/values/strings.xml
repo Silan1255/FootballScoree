@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TahminEdiyorum</string>
+    //SplashScreen
+    <string name="splash_screen_title">MAÇ SKOR TAHMİNİ</string>
+
+    //GirisEkrani
+    <string name="giris_title">MAÇ SKOR TAHMİNİ</string>
+    <string name="mail_hint">Mail adresi</string>
+    <string name="sifre_hint">Şifre</string>
+    <string name="beni_unutma">Beni Unutma</string>
+    <string name="button_giris_yapiniz">GİRİŞ YAPINIZ</string>
+    <string name="kayit_yapmadiysaniz_tiklayin">Kayıt yapmadıysanız tıklayın...</string>
+
+    //KayitOl
+    <string name="kayit_title">MAÇ SKOR TAHMİNİ</string>
+    <string name="kayit_mail_hint">Mail Adresi</string>
+    <string name="kayit_Kullanici_adiniz">Kullanıcı Adınız</string>
+    <string name="kayit_sifre_hint">Şifre</string>
+    <string name="button_kayip_yap">Kayıt Ol</string>
+    <string name="kayit_yaptiysaniz_tiklayin">Kayıtlıysanız tıklayın...</string>
+
+
+    <string name="test_username">silan</string>
+    <string name="test_passavord">1</string>
+    <string name="login_eroor">Kullanıcı Adı Ve Şifre Hatalıdır.</string>
+    <string name="title_activity_fragments">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_qualityy">quality</string>
+    <string name="title_football">football</string>
+    <string name="title_search">search</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_account">Profilim</string>
+    <string name="title_activity_main_splash_sceern">MainSplashSceern</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_quality_fragment">QualityFragment</string>
+    <string name="title_activity_tahmin_menu">MainActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+</resources>

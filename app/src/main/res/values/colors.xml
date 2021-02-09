@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">@color/white</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#19b3cb</color>
+    <color name="colorPrimaryDark">#19b3cb</color>
+    <color name="colorAccent">#19b3cb</color>
+
+    <color name="colorSecondary">#7f1a18</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#7f1a18</color>
+
+    <color name="translucentBackground">#ED000000</color>
+    <color name="halftrans_black">#80000000</color>
+    <color name="black_33">#33000000</color>
+    <color name="black_cc">#cc000000</color>
+    <color name="black_b3">#b3000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="slate">#476468</color>
+    <color name="slate_80">#CC476468</color>
+    <color name="slate_60">#99476468</color>
+    <color name="slate_18">#2e476468</color>
+    <color name="success_dialog_info_text_color">#383f47</color>
+    <color name="cool_grey">#acbdbf</color>
+    <color name="charcoal_grey">#474e4f</color>
+    <color name="pale_grey">#e4eeef</color>
+    <color name="dull_orange">#e49248</color>
+    <color name="topaz">#19b3cb</color>
+    <color name="bloodbank_screen_button_text_color">#19b3cb</color>
+    <color name="disabled_grey">#a8a6a6</color>
+    <color name="profile_exit_grey">#c9dfe1</color>
+    <color name="charcoal_grey_50">#80acbdbf</color>
+    <color name="charcoal_grey_64">#a5474e4f</color>
+    <color name="charcoal_grey_75">#bf474e4f</color>
+    <color name="bluish_grey">#868e8f</color>
+    <color name="white_85">#d9ffffff</color>
+    <color name="white_80">#80ffffff</color>
+    <color name="white_70">#b3ffffff</color>
+    <color name="white_25">#3effffff</color>
+    <color name="campaign_filter_blue_shadow">#bee5e9</color>
+    <color name="campaign_filter_blue_shadow_90">#e6bee5e9</color>
+    <color name="campaign_filter_blue_shadow_60">#99bee5e9</color>
+    <color name="campaign_filter_blue_shadow_30">#4dbee5e9</color>
+    <color name="campaign_filter_blue_shadow_5">#0dbee5e9</color>
+    <color name="campaign_item_joinnow_button_selected_color">#ffeedf</color>
+    <color name="orangey_red">#ff4920</color>
+    <color name="blood_group">#d90404</color>
+    <color name="whatiskocailem_card_bg_color">#70d7e7</color>
+    <color name="darkcyan">#297cb8</color>
+    <color name="fillerviewcolor_d8d8d8">#d8d8d8</color>
+    <color name="watermelon">#ff475d</color>
+    <color name="mystic">#ddebec</color>
+    <color name="mystic_transparent">#00ddebec</color>
+    <color name="gallery">#f0f0f0</color>
+    <color name="gunsmoke">#878c8c</color>
+    <color name="tiara">#cdd7d9</color>
+    <color name="light_blue">#c9dfe1</color>
+    <color name="blue">#19b3cb</color>
+    <color name="benefit_title">#476468</color>
+    <color name="light_gray">#89a5a8</color>
+    <color name="add_basket_count_color">#d1f0f5</color>
+    <color name="new_content_indicator_selected_color">#12889b</color>
+    <color name="light_grayish_orange">#fcf4ec</color>
+    <color name="search_text_color">#91a2a4</color>
+</resources>
