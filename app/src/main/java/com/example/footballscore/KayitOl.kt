@@ -25,7 +25,14 @@ class KayitOl : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
+
+            txt_kayit_yaptiysaniz.setOnClickListener {
+                intent = Intent(applicationContext, GirisEkrani::class.java)
+                startActivity(intent)
+            }
             btn_kayit_ol.setOnClickListener {
+
+
                 when {
                     TextUtils.isEmpty(kayit_mail.text.toString().trim {
                         it <= ' '
@@ -77,7 +84,7 @@ class KayitOl : AppCompatActivity() {
                                             "kayıt işlemini başarıyla tamamladınız.",
                                             Toast.LENGTH_LONG
                                         ).show()
-                                        val intent = Intent(this@KayitOl, MainActivity::class.java)
+                                        val intent = Intent(this@KayitOl, GirisEkrani::class.java)
                                         intent.flags =
                                             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                         intent.putExtra("user_id", firebaseUser.uid)
@@ -91,13 +98,10 @@ class KayitOl : AppCompatActivity() {
                                             Toast.LENGTH_LONG
                                         ).show()
                                     }
-
                                 })
                     }
                 }
             }
         }
-
-
     }
 }
