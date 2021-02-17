@@ -9,5 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val userId= intent.getStringExtra("user_id")
+        val MailId= intent.getStringExtra("email_id")
+
+
     }
 }
