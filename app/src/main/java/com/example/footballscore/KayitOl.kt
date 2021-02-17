@@ -32,7 +32,7 @@ class KayitOl : AppCompatActivity() {
                     }) -> {
                         Toast.makeText(
                             this@KayitOl,
-                            "Lütfen Mail adresinizi giriniz.",
+                            "Lütfen Mail adresinizi giriniz...",
                             Toast.LENGTH_LONG
                         ).show()
                     }
