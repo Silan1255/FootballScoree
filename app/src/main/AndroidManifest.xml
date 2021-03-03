@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballScore">
-
+        <activity android:name=".aaaaaaa"></activity>
         <activity
-            android:name=".TahminMenu"
+            android:name=".pages.TahminMenu"
             android:label="@string/title_activity_tahmin_menu" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".KayitOl" />
-        <activity android:name=".GirisEkrani" />
-        <activity android:name=".SplashSceen">
+        <activity android:name=".pages.KayitOl" />
+        <activity android:name=".pages.GirisEkrani" />
+        <activity android:name=".pages.SplashSceen" />
+        <activity android:name=".pages.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.kotlincodes.bottomnavigationview
+package com.example.footballscore.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.footballscore.R
 
-class FootballFragment : Fragment(){
+class QualityFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_football,container,false)
+        return inflater.inflate(R.layout.fragment_quality,container,false)
 
     }
 }
