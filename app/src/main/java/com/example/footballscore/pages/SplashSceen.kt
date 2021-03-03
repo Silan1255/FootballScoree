@@ -1,9 +1,10 @@
-package com.example.footballscore
+package com.example.footballscore.pages
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.footballscore.R
 
 @Suppress("DEPRECATION")
 class SplashSceen : AppCompatActivity() {
@@ -14,7 +15,7 @@ class SplashSceen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_sceen)
         handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this,GirisEkrani::class.java)
+            val intent = Intent(this, GirisEkrani::class.java)
             startActivity(intent)
             finish()
         },3000)

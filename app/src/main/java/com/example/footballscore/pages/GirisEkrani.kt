@@ -1,10 +1,9 @@
-package com.example.footballscore
+package com.example.footballscore.pages
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast

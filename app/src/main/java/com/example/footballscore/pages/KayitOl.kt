@@ -1,18 +1,15 @@
-package com.example.footballscore
 
-import android.app.Application
+package com.example.footballscore.pages
+
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
-import com.example.footballscore.databinding.ActivityGirisEkraniBinding
 import com.example.footballscore.databinding.ActivityKayitOlBinding
-import com.example.footballscore.databinding.ActivityMainBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -41,8 +38,6 @@ class KayitOl : AppCompatActivity() {
         userMail = sharedPreferences.getString("userMail", "")
         userPassword = sharedPreferences.getString("userPassword", "")
         userName = sharedPreferences.getString("userName", "")
-        //initScreen()
-
 
         binding.txtKayitYaptiysaniz.setOnClickListener {
             intent = Intent(applicationContext, GirisEkrani::class.java)
@@ -80,15 +75,6 @@ class KayitOl : AppCompatActivity() {
             }
         }
     }
-   /* private fun initScreen() {
-        binding.kayitKullaniciAdi.setText(userMail)
-        binding.kayitSifre.setText(userPassword)
-        binding.kayitKullaniciAdi.setText(userName)
-
-
-    }
-
-    */
 
     private fun isValid(): Boolean {
         var isCheckNull = true
