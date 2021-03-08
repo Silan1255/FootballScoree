@@ -25,7 +25,7 @@
     <string name="login_eroor">Kullanıcı Adı Ve Şifre Hatalıdır.</string>
     <string name="title_activity_fragments">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_qualityy">quality</string>
+    <string name="title_rank">Rank</string>
     <string name="title_football">football</string>
     <string name="title_search">search</string>
 
