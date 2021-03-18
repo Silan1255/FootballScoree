@@ -28,6 +28,8 @@
     <string name="title_qualityy">quality</string>
     <string name="title_football">football</string>
     <string name="title_search">search</string>
+    <string name="title_rank">Sıralama</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_account">Profilim</string>

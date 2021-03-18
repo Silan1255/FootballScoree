@@ -8,14 +8,17 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import com.example.footballscore.databinding.ActivityGirisEkraniBinding
+import com.example.footballscore.view.KayitOl
+import com.example.footballscore.view.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_giris_ekrani.*
 import kotlinx.android.synthetic.main.activity_kayit_ol.*
 
 
-class GirisEkrani : AppCompatActivity() {
+class LoginScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityGirisEkraniBinding
     lateinit var sharedPreferences: SharedPreferences
@@ -57,16 +60,16 @@ class GirisEkrani : AppCompatActivity() {
                         if (task.isSuccessful) {
 
                             val firebaseUser: FirebaseUser = task.result!!.user!!
-                            Toast.makeText(this@GirisEkrani, "Giriş  başarılı.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginScreen, "Giriş  başarılı.", Toast.LENGTH_LONG).show()
 
-                            val intent = Intent(this@GirisEkrani, MainActivity::class.java)
+                            val intent = Intent(this@LoginScreen, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
                             intent.putExtra("email_id", mailAdresi)
                             startActivity(intent)
                             finish()
                         } else {
-                            Toast.makeText(this@GirisEkrani, "Böyle bir kullanıcı bulunamadı, mail adresi veya şifrenizi doğru girdiğinizden emin olun.".toString(), Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginScreen, "Böyle bir kullanıcı bulunamadı, mail adresi veya şifrenizi doğru girdiğinizden emin olun.".toString(), Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -106,19 +109,19 @@ class GirisEkrani : AppCompatActivity() {
     private fun isValid(): Boolean {
         var isCheckNull = true
         if (edt_mail_adresi.text.isEmpty()) {
-            Toast.makeText(this@GirisEkrani, "Lütfen Mail adresinizi giriniz.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@LoginScreen, "Lütfen Mail adresinizi giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
         }
         if (edt_sifre.text.isEmpty()) {
-            Toast.makeText(this@GirisEkrani, "Lütfen Sifrenizi giriniz.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@LoginScreen, "Lütfen Sifrenizi giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
         }
         if (isEmailValid(edt_mail_adresi.text.toString()) == false) {
-            Toast.makeText(this@GirisEkrani, "Lütfen Mail Adresiniz doğru formatta giriniz.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@LoginScreen, "Lütfen Mail Adresiniz doğru formatta giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
         }
         if (edt_sifre.text.length < 6) {
-            Toast.makeText(this@GirisEkrani, "Şifreniz en az 6 karakterden oluşmaktadır.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@LoginScreen, "Şifreniz en az 6 karakterden oluşmaktadır.", Toast.LENGTH_LONG).show()
             isCheckNull = false
 
         }

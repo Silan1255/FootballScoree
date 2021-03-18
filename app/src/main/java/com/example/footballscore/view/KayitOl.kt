@@ -10,6 +10,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
 import com.example.footballscore.databinding.ActivityKayitOlBinding
+import com.example.footballscore.pages.LoginScreen
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +41,7 @@ class KayitOl : AppCompatActivity() {
         userName = sharedPreferences.getString("userName", "")
 
         binding.txtKayitYaptiysaniz.setOnClickListener {
-            intent = Intent(applicationContext, GirisEkrani::class.java)
+            intent = Intent(applicationContext, LoginScreen::class.java)
             startActivity(intent)
         }
 
@@ -60,7 +61,7 @@ class KayitOl : AppCompatActivity() {
                                 if (task.isSuccessful) {
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this@KayitOl, "kayıt işlemini başarıyla tamamladınız.", Toast.LENGTH_LONG).show()
-                                    val intent = Intent(this@KayitOl, GirisEkrani::class.java)
+                                    val intent = Intent(this@KayitOl, LoginScreen::class.java)
 
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("user_id", firebaseUser.uid)

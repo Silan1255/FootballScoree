@@ -16,8 +16,8 @@
             android:name=".view.TahminMenu"
             android:label="@string/title_activity_tahmin_menu" />
         <activity android:name=".view.MainActivity" />
+        <activity android:name=".pages.LoginScreen" />
         <activity android:name=".view.KayitOl" />
-        <activity android:name=".view.GirisEkrani" />
         <activity android:name=".view.SplashSceen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
