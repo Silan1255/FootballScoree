@@ -1,12 +1,7 @@
-package com.example.footballscore.pages
+package com.example.footballscore.view
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.footballscore.R
 
 class TahminMenu : AppCompatActivity() {

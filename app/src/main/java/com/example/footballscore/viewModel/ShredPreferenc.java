@@ -1,12 +1,14 @@
-package com.example.footballscore;
+package com.example.footballscore.viewModel;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ShredPreferenc {
     static final String PREF_NAME = "Login";
 
-    public void save(Context context, String key, String value) {
+    public void save( Context context, String key, String value) {
         SharedPreferences settings = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(key, value);

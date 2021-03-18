@@ -1,5 +1,5 @@
 
-package com.example.footballscore.pages
+package com.example.footballscore.view
 
 import android.content.Context
 import android.content.Intent

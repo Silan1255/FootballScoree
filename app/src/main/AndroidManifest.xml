@@ -3,21 +3,22 @@
     package="com.example.footballscore">
 
 
-
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballScore">
         <activity
-            android:name=".pages.TahminMenu"
+            android:name=".view.TahminMenu"
             android:label="@string/title_activity_tahmin_menu" />
-        <activity android:name=".pages.MainActivity" />
-        <activity android:name=".pages.KayitOl" />
-        <activity android:name=".pages.GirisEkrani" />
-        <activity android:name=".pages.SplashSceen" >
+        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.KayitOl" />
+        <activity android:name=".view.GirisEkrani" />
+        <activity android:name=".view.SplashSceen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.footballscore.pages
+package com.example.footballscore.view
 
 import android.content.Context
 import android.content.Intent
@@ -23,8 +23,8 @@ class GirisEkrani : AppCompatActivity() {
     var userMail: String? = ""
     var userPassword: String? = ""
     var isRemembered: Boolean = false
-    var MailAdresi = ""
-    var Sifre = ""
+    var mailAdresi = ""
+    var sifre = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +32,10 @@ class GirisEkrani : AppCompatActivity() {
         binding = ActivityGirisEkraniBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
 
+
         //Burada tanımlıyorsun
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
-// editorü burada tanımlamıştık daha önce ama hata verdiği için yukarıya aldım anladım ama şöyle bir
-// durum var bu burada tanımlı - Hatayı okuyalım - translate saçmaladı bu sefer - yani inşa edilmedi diyor tanımlamadan ->
-        // çağırmaya çalışıyorsun diyor
+
         isRemembered = sharedPreferences.getBoolean(IS_CHECKED, false)
         userMail = sharedPreferences.getString(USER_NAME, "")
         userPassword = sharedPreferences.getString(USER_PASSWORD, "")
@@ -51,11 +50,11 @@ class GirisEkrani : AppCompatActivity() {
         binding.apply {
             btn_giris_yapiniz.setOnClickListener {
                 if (isValid()) {
-                    MailAdresi = edt_mail_adresi.text.toString().trim() // fonksiyon içinde kullanabilmek için değerleri globale tanımladık. <- ezbere gitme cümle bu
-                    Sifre = edt_sifre.text.toString().trim()
+                    mailAdresi = edt_mail_adresi.text.toString().trim() // fonksiyon içinde kullanabilmek için değerleri globale tanımladık. <- ezbere gitme cümle bu
+                    sifre = edt_sifre.text.toString().trim()
                     control()
 
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(MailAdresi, Sifre).addOnCompleteListener { task ->
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(mailAdresi, sifre).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
 
                             val firebaseUser: FirebaseUser = task.result!!.user!!
@@ -64,7 +63,7 @@ class GirisEkrani : AppCompatActivity() {
                             val intent = Intent(this@GirisEkrani, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
-                            intent.putExtra("email_id", MailAdresi)
+                            intent.putExtra("email_id", mailAdresi)
                             startActivity(intent)
                             finish()
                         } else {
@@ -79,8 +78,8 @@ class GirisEkrani : AppCompatActivity() {
         sharedPreferences.edit {
             if (binding.cbBeniUnutma.isChecked) {
                 //eğer adam beni unutmaya tiklemişse
-                this.putString(USER_NAME, MailAdresi)
-                this.putString(USER_PASSWORD, Sifre)
+                this.putString(USER_NAME, mailAdresi)
+                this.putString(USER_PASSWORD, sifre)
                 this.putBoolean(IS_CHECKED, cb_beni_unutma.isChecked)  //cb_beni_unutma.isChecked -> Bu seçiliyse true verir değilse false direk bunu buraya koyarak değeri dinamik hale getirdik
                 this.apply()
             } else {
