@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.footballscore.ui.home.HomeFragment"
+        android:name="com.example.footballscore.view.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/fragment_quality"
-        android:name="com.example.footballscore.ui.home.HomeFragment"
-        android:label="@string/title_qualityy"
+        android:name="com.example.footballscore.view.HomeFragment"
+        android:label="@string/title_rank"
         tools:layout="@layout/fragment_quality" />
 
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.example.footballscore.ui.home.HomeFragment"
+        android:name="com.example.footballscore.view.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/fragment_football"
-        android:name="com.example.footballscore.ui.home.HomeFragment"
+        android:name="com.example.footballscore.view.FootballFragment"
         android:label="@string/title_football"
         tools:layout="@layout/fragment_football" />
 

@@ -1,4 +1,4 @@
-package com.example.footballscore.fragments
+package com.example.footballscore.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

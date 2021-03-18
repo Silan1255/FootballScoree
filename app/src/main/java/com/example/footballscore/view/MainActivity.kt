@@ -1,4 +1,4 @@
-package com.example.footballscore.pages
+package com.example.footballscore.view
 
 import android.content.Context
 import android.os.Bundle
@@ -7,12 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.footballscore.R
-import com.example.footballscore.ShredPreferenc
+import com.example.footballscore.viewModel.ShredPreferenc
 import com.example.footballscore.databinding.ActivityMainBinding
-import com.example.footballscore.fragments.FootballFragment
-import com.example.footballscore.fragments.HomeFragment
-import com.example.footballscore.fragments.QualityFragment
-import com.example.footballscore.fragments.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
