@@ -1,4 +1,4 @@
-package com.example.footballscore.view
+package com.example.footballscore.pages
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.edit
 import com.example.footballscore.databinding.ActivityGirisEkraniBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -100,7 +99,7 @@ class GirisEkrani : AppCompatActivity() {
     private fun initScreen() {
         binding.edtMailAdresi.setText(userMail)
         binding.edtSifre.setText(userPassword)
-        binding.cbBeniUnutma.isChecked = isRemembered // Bu satır seçili veya olmama durumunu sağlıyor
+        binding.cbBeniUnutma.isChecked = isRemembered
 
     }
 
@@ -131,9 +130,6 @@ class GirisEkrani : AppCompatActivity() {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    //Compain object : Bazı değerlerin bir arada tanımlanması için kullanılır bir değer tutmazlar.
-    //Biz burada shared keylerini tutarak bir çok yerde kullanmak için yaptık
-    //örneğin USER_NAME - USER_PASSWORD BU ikisi proje içinde birçok farklı noktada bunun için kullanılır.
     companion object {
         const val IS_CHECKED = "isChecked"
         const val USER_NAME = "userMail"

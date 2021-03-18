@@ -3,7 +3,7 @@
     package="com.example.footballscore">
 
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
