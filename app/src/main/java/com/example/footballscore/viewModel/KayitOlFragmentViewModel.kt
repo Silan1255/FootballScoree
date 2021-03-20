@@ -1,40 +1,35 @@
 package com.example.footballscore.viewModel
 
-
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.ResultResponse
+import com.example.footballscore.model.user.RegisterUserItem
 import com.example.footballscore.sevis.FutbolAPIServis
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class HomeFragmentViewModel : ViewModel() {
+class KayitOlFragmentViewModel : ViewModel() {
 
     private val futbolAPIServis = FutbolAPIServis()
     private val dispoosable = CompositeDisposable()
 
 
-    fun refreshData() {
-        verileriInternettenAl()
-    }
-    val takimler = MutableLiveData<List<GetMaclarItem>>()
-    private fun verileriInternettenAl() {
-        dispoosable.add(futbolAPIServis.getData()
+    val kayitOlResponse : MutableLiveData<ResultResponse> = MutableLiveData()
+    fun newUserRegister(body : RegisterUserItem){
+        dispoosable.add(
+            futbolAPIServis.setNewUser(body)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<GetMaclarItem>>() {
-                    override fun onSuccess(t: List<GetMaclarItem>) {
-                        Log.i("json", t.toString())
-                        takimler.value = t.filter { macItem ->
-                            macItem.macSonucu.trim().length > 2
-                        }
+                .subscribeWith(object : DisposableSingleObserver <ResultResponse>(){
+                    override fun onSuccess(response: ResultResponse) {
+                        kayitOlResponse.value = response
                     }
-
                     override fun onError(e: Throwable) {
-                        e.printStackTrace()
+                        Log.i("hata", e.toString())
                     }
                 })
         )

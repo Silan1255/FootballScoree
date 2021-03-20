@@ -9,8 +9,14 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.footballscore.databinding.ActivityKayitOlBinding
+import com.example.footballscore.model.user.RegisterUserItem
 import com.example.footballscore.pages.LoginScreen
+import com.example.footballscore.viewModel.HomeFragmentViewModel
+import com.example.footballscore.viewModel.KayitOlFragmentViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +29,8 @@ class KayitOl : AppCompatActivity() {
     lateinit var binding: ActivityKayitOlBinding
     lateinit var sharedPreferences: SharedPreferences
 
+   private lateinit var kayitOlFragmentViewModel: KayitOlFragmentViewModel
+
     var userMail: String? = ""
     var userPassword: String? = ""
     var userName: String? = ""
@@ -32,6 +40,8 @@ class KayitOl : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityKayitOlBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
+
+        kayitOlFragmentViewModel= ViewModelProviders.of(this).get(KayitOlFragmentViewModel::class.java)
 
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -45,6 +55,8 @@ class KayitOl : AppCompatActivity() {
             startActivity(intent)
         }
 
+        observeLiveData()
+
 
         binding.apply {
 
@@ -52,13 +64,12 @@ class KayitOl : AppCompatActivity() {
                 if (isValid()) {
                     val MailAdresi: String = kayitMail.text.toString().trim()
                     val sifre: String = kayitSifre.text.toString().trim()
-
-
                     FirebaseAuth.getInstance()
                         .createUserWithEmailAndPassword(MailAdresi, sifre)
                         .addOnCompleteListener(
                             OnCompleteListener<AuthResult> { task ->
                                 if (task.isSuccessful) {
+                                    kayitOlFragmentViewModel.newUserRegister(RegisterUserItem(MailAdresi, kayitKullaniciAdi.text.toString(), sifre))
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
                                     Toast.makeText(this@KayitOl, "kayıt işlemini başarıyla tamamladınız.", Toast.LENGTH_LONG).show()
                                     val intent = Intent(this@KayitOl, LoginScreen::class.java)
@@ -111,4 +122,9 @@ class KayitOl : AppCompatActivity() {
         const val IS_CHECKED = "isChecked"
     }
 
+    fun observeLiveData(){
+        kayitOlFragmentViewModel.kayitOlResponse.observe(this, Observer {
+            Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
+        })
+    }
 }

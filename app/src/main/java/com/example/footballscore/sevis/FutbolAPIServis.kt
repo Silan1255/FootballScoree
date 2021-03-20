@@ -1,6 +1,8 @@
 package com.example.footballscore.sevis
 
+import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.user.RegisterUserItem
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -26,4 +28,7 @@ class FutbolAPIServis {
         return  api.getFutbol()
     }
 
+    fun setNewUser(body : RegisterUserItem) : Single<ResultResponse>{
+        return api.newUserRegister(body)
+    }
 }
