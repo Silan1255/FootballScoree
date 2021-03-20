@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
     }
 
     fun observeLiveData(){
-        Toast.makeText(requireContext(), "Observable", Toast.LENGTH_LONG).show()
+
         homeFragmentViewModel.takimler.observe(viewLifecycleOwner, Observer { Takimler ->
            Takimler?.let {
                futbol_listesi.visibility= View.VISIBLE

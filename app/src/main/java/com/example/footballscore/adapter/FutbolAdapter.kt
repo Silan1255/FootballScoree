@@ -20,7 +20,11 @@ class FutbolAdapter (val futbolModelListesi: ArrayList<GetMaclarItem>) : Recycle
     }
 
     override fun onBindViewHolder(holder: FutbolViewHolder, position: Int) {
-        holder.itemView.gecmis_mac_skorlari.text= futbolModelListesi.get(position).macSonucu
+        holder.itemView.FirstTeam.text= futbolModelListesi.get(position).firsTeam
+        holder.itemView.SecondTeam.text= futbolModelListesi.get(position).secondTeam
+        holder.itemView.MacSonucu.text= futbolModelListesi.get(position).macSonucu
+
+
 
     }
 
