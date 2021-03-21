@@ -3,6 +3,7 @@ package com.example.footballscore.sevis
 import android.telecom.Call
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.maclar.SkorTahminEt
 import com.example.footballscore.model.user.RegisterUserItem
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -21,6 +22,8 @@ interface FutbolAPI {
     companion object {
         private const val MACLAR = "maclar"
         private const val NEW_USER = "newUser"
+        private const val NEW_SKOR ="newSkor"
+
     }
 
     @GET(MACLAR)
@@ -28,4 +31,7 @@ interface FutbolAPI {
 
     @POST(NEW_USER)
     fun newUserRegister(@Body body : RegisterUserItem) : Single<ResultResponse>
+
+    @POST(NEW_SKOR)
+    fun  newSonucRegister(@Body body: SkorTahminEt) : Single<ResultResponse>
 }

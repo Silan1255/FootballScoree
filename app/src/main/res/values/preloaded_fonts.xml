@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/acme</item>
+        <item>@font/ewert</item>
+        <item>@font/faster_one</item>
+        <item>@font/seaweed_script</item>
+        <item>@font/vast_shadow</item>
+    </array>
 </resources>

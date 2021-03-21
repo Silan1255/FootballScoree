@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.FootballFragment">
+    tools:context=".view.FootballFragment"
+    android:orientation="vertical">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp"
-        android:text="TURUNCUUUUU"
-        android:textSize="20dp" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/sifre_edittext_custom_style"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:layout_margin="20dp" />
 
-</FrameLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sifre_edittext_custom_style"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:layout_margin="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sifre_edittext_custom_style"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:layout_margin="20dp" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sifre_edittext_custom_style"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:text="Sonucu gönder"
+        android:layout_margin="20dp"/>
+
+
+</LinearLayout>

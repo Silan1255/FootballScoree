@@ -2,6 +2,7 @@ package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.maclar.SkorTahminEt
 import com.example.footballscore.model.user.RegisterUserItem
 import io.reactivex.Single
 import retrofit2.Retrofit
@@ -31,4 +32,10 @@ class FutbolAPIServis {
     fun setNewUser(body : RegisterUserItem) : Single<ResultResponse>{
         return api.newUserRegister(body)
     }
+
+    fun setNewTakim(body : SkorTahminEt) : Single<ResultResponse> {
+        return api.newSonucRegister(body)
+    }
+
+
 }

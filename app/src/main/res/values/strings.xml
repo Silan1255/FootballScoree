@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Futbol Skor Tahmin</string>
     //SplashScreen
-    <string name="splash_screen_title">MAÇ SKOR TAHMİNİ</string>
+    <string name="splash_screen_title">MAÇ SKOR TAHMINI</string>
 
     //GirisEkrani
     <string name="giris_title">MAÇ SKOR TAHMİNİ</string>
@@ -24,10 +24,10 @@
     <string name="test_passavord">1</string>
     <string name="login_eroor">Kullanıcı Adı Ve Şifre Hatalıdır.</string>
     <string name="title_activity_fragments">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_qualityy">quality</string>
-    <string name="title_football">football</string>
-    <string name="title_search">search</string>
+    <string name="title_home">Ana Sayfa</string>
+    <string name="title_qualityy">Sıralama</string>
+    <string name="title_football">Tahmin Et</string>
+    <string name="title_search">Arama</string>
     <string name="title_rank">Sıralama</string>
 
 
