@@ -9,3 +9,4 @@ data class ResultResponse(
     @SerializedName("status")
     val status: String
 )
+
