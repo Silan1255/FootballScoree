@@ -10,12 +10,11 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.example.footballscore.R
 import com.example.footballscore.databinding.ActivityKayitOlBinding
 import com.example.footballscore.model.user.RegisterUserItem
 import com.example.footballscore.pages.LoginScreen
-import com.example.footballscore.viewModel.HomeFragmentViewModel
 import com.example.footballscore.viewModel.KayitOlFragmentViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -34,12 +33,13 @@ class KayitOl : AppCompatActivity() {
     var userMail: String? = ""
     var userPassword: String? = ""
     var userName: String? = ""
-
+// bye bye
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityKayitOlBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
+       // R.color.charcoal_grey_75.charcoal_grey(this)
 
         kayitOlFragmentViewModel= ViewModelProviders.of(this).get(KayitOlFragmentViewModel::class.java)
 
@@ -56,6 +56,7 @@ class KayitOl : AppCompatActivity() {
         }
 
         observeLiveData()
+
 
 
         binding.apply {

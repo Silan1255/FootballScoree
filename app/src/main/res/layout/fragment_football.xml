@@ -3,44 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.FootballFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.FootballFragment">
 
     <EditText
+
+        android:id="@+id/tahminFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/sifre_edittext_custom_style"
-        android:textSize="15dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:padding="10dp"
-        android:layout_margin="20dp" />
+        android:textSize="15dp" />
 
     <EditText
+        android:id="@+id/tahminSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/sifre_edittext_custom_style"
-        android:textSize="15dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:padding="10dp"
-        android:layout_margin="20dp" />
+        android:textSize="15dp" />
 
     <EditText
+        android:id="@+id/macSonucu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/sifre_edittext_custom_style"
-        android:textSize="15dp"
+        android:layout_margin="20dp"
+        android:inputType="number"
+        android:background="@drawable/edittext_custom_style"
         android:padding="10dp"
-        android:layout_margin="20dp" />
-
-
+        android:textSize="15dp" />b
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sonucuGonder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/sifre_edittext_custom_style"
-        android:textSize="15dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:padding="10dp"
         android:text="Sonucu gönder"
-        android:layout_margin="20dp"/>
+        android:textSize="15dp" />
 
 
 </LinearLayout>

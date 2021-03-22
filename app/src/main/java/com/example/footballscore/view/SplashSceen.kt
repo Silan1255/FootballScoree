@@ -1,11 +1,14 @@
 package com.example.footballscore.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.footballscore.R
 import com.example.footballscore.pages.LoginScreen
+
+
 
 @Suppress("DEPRECATION")
 class SplashSceen : AppCompatActivity() {
@@ -19,19 +22,8 @@ class SplashSceen : AppCompatActivity() {
             val intent = Intent(this, LoginScreen::class.java)
             startActivity(intent)
             finish()
-        },10000)
+        }, 10000)
 
-
-
-
-
-
-
-
-
-
-
-
-
+       // R.color.white.StatusBarColorChange(this)
     }
 }

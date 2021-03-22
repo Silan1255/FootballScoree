@@ -18,6 +18,10 @@
         android:layout_weight="10"
         android:drawableTop="@drawable/running"
         android:drawablePadding="20dp"
-        android:drawableTint="@color/topaz"
+        android:drawableTint="#407a8e"
+        android:fontFamily="@font/faster_one"
+        android:gravity="center"
+        android:text="@string/splash_screen_title"
+        android:textColor="#407a8e"
         android:textSize="40dp" />
 </LinearLayout>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.KayitOl">
+    tools:context=".view.KayitOl"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -13,14 +14,16 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/baslikk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="100dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="5"
+            android:layout_marginRight="40dp"
+            android:drawableRight="@drawable/sporr"
+            android:fontFamily="@font/walter_turncoat"
             android:text="@string/kayit_title"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40dp" />
     </LinearLayout>
 
@@ -29,10 +32,10 @@
         android:id="@+id/kayit_mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/sifre_edittext_custom_style"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:hint="@string/kayit_mail_hint"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
@@ -44,10 +47,10 @@
         android:id="@+id/kayit_kullanici_adi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/sifre_edittext_custom_style"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:hint="@string/kayit_Kullanici_adiniz"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
@@ -59,10 +62,10 @@
         android:id="@+id/kayit_sifre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/sifre_edittext_custom_style"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edittext_custom_style"
         android:hint="@string/kayit_sifre_hint"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
@@ -71,17 +74,19 @@
         android:textSize="20dp" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_kayit_ol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/giris_yapiniz_button_custom_style"
-        android:text="@string/button_kayip_yap"
-        android:textColor="@color/white"
-        android:textSize="15dp" />
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bbutton_custom_style"
+       android:text="@string/button_kayip_yap"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:padding="10dp"/>
 
     <TextView
         android:id="@+id/txt_kayit_yaptiysaniz"
@@ -92,7 +97,8 @@
         android:gravity="center"
         android:onClick="onClick"
         android:text="@string/kayit_yaptiysaniz_tiklayin"
-        android:textSize="20dp"
-        tools:ignore="OnClick" />
+        android:textSize="18dp"
+        tools:ignore="OnClick"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

@@ -34,6 +34,8 @@ class LoginScreen : AppCompatActivity() {
         binding = ActivityGirisEkraniBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
 
+      // R.color.charcoal_grey_75.StatusBarColorChange(LoginScreen)
+        //tamam sağol eklesene
 
         //Burada tanımlıyorsun
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
