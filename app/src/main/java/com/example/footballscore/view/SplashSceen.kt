@@ -8,8 +8,6 @@ import androidx.core.content.ContextCompat
 import com.example.footballscore.R
 import com.example.footballscore.pages.LoginScreen
 
-
-
 @Suppress("DEPRECATION")
 class SplashSceen : AppCompatActivity() {
 
@@ -24,6 +22,6 @@ class SplashSceen : AppCompatActivity() {
             finish()
         }, 10000)
 
-       // R.color.white.StatusBarColorChange(this)
+        // R.color.white.StatusBarColorChange(this)
     }
 }

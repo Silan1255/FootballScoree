@@ -94,7 +94,5 @@
         android:text="@string/kayit_yapmadiysaniz_tiklayin"
         android:textColor="@color/white"
         android:textSize="18dp"
-        tools:ignore="OnClick"
-
-        />
+        tools:ignore="OnClick" />
 </LinearLayout>

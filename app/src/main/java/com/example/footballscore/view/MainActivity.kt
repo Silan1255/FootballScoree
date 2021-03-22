@@ -14,14 +14,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding= ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userId= intent.getStringExtra("user_id")
-        val MailId= intent.getStringExtra("email_id")
-
+        val userId = intent.getStringExtra("user_id")
+        val MailId = intent.getStringExtra("email_id")
 
         shredPreferenc = ShredPreferenc()
-
 
         loadFragment(HomeFragment())
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)

@@ -16,13 +16,14 @@ class HomeFragmentViewModel : ViewModel() {
     private val futbolAPIServis = FutbolAPIServis()
     private val dispoosable = CompositeDisposable()
 
-
     fun refreshData() {
         verileriInternettenAl()
     }
+
     val takimler = MutableLiveData<List<GetMaclarItem>>()
     private fun verileriInternettenAl() {
-        dispoosable.add(futbolAPIServis.getData()
+        dispoosable.add(
+            futbolAPIServis.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<GetMaclarItem>>() {

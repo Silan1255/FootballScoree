@@ -9,8 +9,7 @@
     android:background="@drawable/edittext_custom_style"
     android:gravity="center"
     android:orientation="horizontal"
-    android:padding="10dp"
-    >
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/FirstTeam"
@@ -18,8 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:gravity="center"
-        android:textSize="14dp"
-        android:padding="4dp"/>
+        android:padding="4dp"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/MacSonucTeam"
@@ -28,8 +27,8 @@
         android:layout_weight="4"
         android:background="@drawable/mail_adresi_edittext_custom_style"
         android:gravity="center"
-        android:textSize="14dp"
-        android:padding="4dp"/>
+        android:padding="4dp"
+        android:textSize="14dp" />
 
 
     <TextView
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:gravity="center"
-        android:textSize="14dp"
-        android:padding="4dp"/>
+        android:padding="4dp"
+        android:textSize="14dp" />
 
 </LinearLayout>

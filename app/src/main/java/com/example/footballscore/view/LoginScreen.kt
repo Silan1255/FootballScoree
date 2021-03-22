@@ -28,25 +28,18 @@ class LoginScreen : AppCompatActivity() {
     var mailAdresi = ""
     var sifre = ""
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGirisEkraniBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
 
-      // R.color.charcoal_grey_75.StatusBarColorChange(LoginScreen)
-        //tamam sağol eklesene
-
-        //Burada tanımlıyorsun
+        // R.color.charcoal_grey_75.StatusBarColorChange(LoginScreen)
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
 
         isRemembered = sharedPreferences.getBoolean(IS_CHECKED, false)
         userMail = sharedPreferences.getString(USER_NAME, "")
         userPassword = sharedPreferences.getString(USER_PASSWORD, "")
-
-
         initScreen()
-
         binding.txtKayitYapmadiysaniz.setOnClickListener {
             intent = Intent(applicationContext, KayitOl::class.java)
             startActivity(intent)
@@ -78,34 +71,27 @@ class LoginScreen : AppCompatActivity() {
             }
         }
     }
+
     private fun control() {
         sharedPreferences.edit {
             if (binding.cbBeniUnutma.isChecked) {
-                //eğer adam beni unutmaya tiklemişse
                 this.putString(USER_NAME, mailAdresi)
                 this.putString(USER_PASSWORD, sifre)
-                this.putBoolean(IS_CHECKED, cb_beni_unutma.isChecked)  //cb_beni_unutma.isChecked -> Bu seçiliyse true verir değilse false direk bunu buraya koyarak değeri dinamik hale getirdik
+                this.putBoolean(IS_CHECKED, cb_beni_unutma.isChecked)
                 this.apply()
             } else {
-
-                //eğer tiklemişse ve diğer gelişinde seçili olarak gelecek
-                //Diğer bir senorya artık beni hatırlama diyebilir ve 2. gelişinde tiki kaldırabilir
                 this.putString(USER_NAME, "")
                 this.putString(USER_PASSWORD, "")
                 this.putBoolean(IS_CHECKED, cb_beni_unutma.isChecked)
                 this.apply()
-                //Burada farkettiysen kod tekrarı var kod içinde bunu bir fun yazıp ayrı bir yerde kontrol edilip
-                // yazılabilir o iş sende yapman gereken MailAdresi ve sifre değerlerini globale tanımla
             }
         }
     }
-
 
     private fun initScreen() {
         binding.edtMailAdresi.setText(userMail)
         binding.edtSifre.setText(userPassword)
         binding.cbBeniUnutma.isChecked = isRemembered
-
     }
 
     private fun isValid(): Boolean {
@@ -125,9 +111,7 @@ class LoginScreen : AppCompatActivity() {
         if (edt_sifre.text.length < 6) {
             Toast.makeText(this@LoginScreen, "Şifreniz en az 6 karakterden oluşmaktadır.", Toast.LENGTH_LONG).show()
             isCheckNull = false
-
         }
-
         return isCheckNull
     }
 
@@ -141,7 +125,3 @@ class LoginScreen : AppCompatActivity() {
         const val USER_PASSWORD = "userPassword"
     }
 }
-
-
-//Mail adresi aynı olduğu zaman kayıt olurken - Zaten var bu mail adresi
-//Kullanıcı yoksa böyle bir kullanıcı bulunmamaktadır. Lütfen kayıt olunuz :)

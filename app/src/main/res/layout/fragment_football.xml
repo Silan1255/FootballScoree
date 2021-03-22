@@ -7,7 +7,6 @@
     tools:context=".view.FootballFragment">
 
     <EditText
-
         android:id="@+id/tahminFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,10 +29,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:inputType="number"
         android:background="@drawable/edittext_custom_style"
+        android:inputType="number"
         android:padding="10dp"
-        android:textSize="15dp" />b
+        android:textSize="15dp" />
 
 
     <androidx.appcompat.widget.AppCompatButton
