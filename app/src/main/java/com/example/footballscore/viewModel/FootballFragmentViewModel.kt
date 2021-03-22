@@ -15,17 +15,18 @@ class FootballFragmentViewModel : ViewModel() {
     private val futbolAPIServis = FutbolAPIServis()
     private val dispoosable = CompositeDisposable()
 
-    val TahminEtResponse : MutableLiveData<ResultResponse> = MutableLiveData()
-    fun newTakimRegister(body : SkorTahminEt){
+    val TahminEtResponse: MutableLiveData<ResultResponse> = MutableLiveData()
+    fun newTakimRegister(body: SkorTahminEt) {
         dispoosable.add(
             futbolAPIServis.setNewTakim(body)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<ResultResponse>(){
+                .subscribeWith(object : DisposableSingleObserver<ResultResponse>() {
                     override fun onSuccess(response: ResultResponse) {
                         TahminEtResponse.value = response
                         Log.i("good", response.toString())
                     }
+
                     override fun onError(e: Throwable) {
                         Log.i("hata", e.toString())
                     }

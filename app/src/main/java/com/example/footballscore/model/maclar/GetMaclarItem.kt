@@ -3,7 +3,7 @@ package com.example.footballscore.model.maclar
 
 import com.google.gson.annotations.SerializedName
 
-class GetMaclar : ArrayList<GetMaclar.GetMaclarItem>(){
+class GetMaclar : ArrayList<GetMaclar.GetMaclarItem>() {
     data class GetMaclarItem(
         @SerializedName("Dakika")
         val dakika: String,

@@ -18,16 +18,11 @@ class HomeFragment : Fragment() {
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
 
     private val futbolAdapter = FutbolAdapter(arrayListOf())
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,22 +32,19 @@ class HomeFragment : Fragment() {
         homeFragmentViewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel::class.java)
         homeFragmentViewModel.refreshData()
 
-        futbol_listesi.layoutManager= LinearLayoutManager(context)
-        futbol_listesi.adapter=futbolAdapter
-
+        futbol_listesi.layoutManager = LinearLayoutManager(context)
+        futbol_listesi.adapter = futbolAdapter
 
         observeLiveData()
     }
 
-    fun observeLiveData(){
+    fun observeLiveData() {
 
         homeFragmentViewModel.takimler.observe(viewLifecycleOwner, Observer { Takimler ->
-           Takimler?.let {
-               futbol_listesi.visibility= View.VISIBLE
-               futbolAdapter.gecmisMacSkorlariniGüncelle(Takimler)
-           }
-
+            Takimler?.let {
+                futbol_listesi.visibility = View.VISIBLE
+                futbolAdapter.gecmisMacSkorlariniGüncelle(Takimler)
+            }
         })
-
     }
 }

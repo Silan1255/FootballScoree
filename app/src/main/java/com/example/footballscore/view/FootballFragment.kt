@@ -14,13 +14,13 @@ import com.example.footballscore.viewModel.FootballFragmentViewModel
 import com.example.footballscore.viewModel.HomeFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_football.*
 
-class FootballFragment: Fragment(){
+class FootballFragment : Fragment() {
 
     private lateinit var footballFragmentViewModel: FootballFragmentViewModel
 
-        var TahminFirst: String?=""
-        var TahminSecond: String?=""
-        var TahminSonuc: Int?= 0
+    var TahminFirst: String? = ""
+    var TahminSecond: String? = ""
+    var TahminSonuc: Int? = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,16 +40,15 @@ class FootballFragment: Fragment(){
         TahminSecond = tahminSecond.text.toString()
 
         observeLiveData()
-//Şimdilik böyle kalsın bakacağım buna derdi neymiş
 
         sonucuGonder.setOnClickListener {
             footballFragmentViewModel.newTakimRegister(SkorTahminEt(tahminFirst.text.toString(), tahminSecond.text.toString(), macSonucu.text.toString()))
         }
     }
-        fun observeLiveData() {
-            footballFragmentViewModel.TahminEtResponse.observe(viewLifecycleOwner, Observer {
-              Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
-            })
-        }
+    fun observeLiveData() {
+        footballFragmentViewModel.TahminEtResponse.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
+        })
+    }
 }
 

@@ -29,15 +29,15 @@ class FutbolAPIServis {
         .build()
         .create(FutbolAPI::class.java)
 
-    fun getData(): Single<List<GetMaclarItem>>{
-        return  api.getFutbol()
+    fun getData(): Single<List<GetMaclarItem>> {
+        return api.getFutbol()
     }
 
-    fun setNewUser(body: RegisterUserItem) : Single<ResultResponse>{
+    fun setNewUser(body: RegisterUserItem): Single<ResultResponse> {
         return api.newUserRegister(body)
     }
 
-    fun setNewTakim(body: SkorTahminEt) : Single<ResultResponse> {
+    fun setNewTakim(body: SkorTahminEt): Single<ResultResponse> {
         return api.newSonucRegister(body)
     }
 

@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.footballscore.R
 
-class SearchFragment : Fragment(){
+class SearchFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_search,container,false)
-
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 }

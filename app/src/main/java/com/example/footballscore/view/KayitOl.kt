@@ -1,4 +1,3 @@
-
 package com.example.footballscore.view
 
 import android.content.Context
@@ -28,20 +27,19 @@ class KayitOl : AppCompatActivity() {
     lateinit var binding: ActivityKayitOlBinding
     lateinit var sharedPreferences: SharedPreferences
 
-   private lateinit var kayitOlFragmentViewModel: KayitOlFragmentViewModel
+    private lateinit var kayitOlFragmentViewModel: KayitOlFragmentViewModel
 
     var userMail: String? = ""
     var userPassword: String? = ""
     var userName: String? = ""
-// bye bye
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityKayitOlBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
-       // R.color.charcoal_grey_75.charcoal_grey(this)
+        // R.color.charcoal_grey_75.charcoal_grey(this)
 
-        kayitOlFragmentViewModel= ViewModelProviders.of(this).get(KayitOlFragmentViewModel::class.java)
+        kayitOlFragmentViewModel = ViewModelProviders.of(this).get(KayitOlFragmentViewModel::class.java)
 
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -56,9 +54,6 @@ class KayitOl : AppCompatActivity() {
         }
 
         observeLiveData()
-
-
-
         binding.apply {
 
             btn_kayit_ol.setOnClickListener {
@@ -94,20 +89,16 @@ class KayitOl : AppCompatActivity() {
         if (kayit_mail.text.isEmpty()) {
             Toast.makeText(this@KayitOl, "Lütfen Mail adresinizi giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
-        }
-        else if  (kayit_sifre.text.isEmpty()) {
+        } else if (kayit_sifre.text.isEmpty()) {
             Toast.makeText(this@KayitOl, "Lütfen Sifrenizi giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
-        }
-        else if (kayit_kullanici_adi.text.isEmpty()) {
+        } else if (kayit_kullanici_adi.text.isEmpty()) {
             Toast.makeText(this@KayitOl, "Lütfen kullanıcı adınızı  giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
-        }
-        else if (isEmailValid(kayit_mail.text.toString()) == false) {
+        } else if (isEmailValid(kayit_mail.text.toString()) == false) {
             Toast.makeText(this@KayitOl, "Lütfen Mail Adresiniz doğru formatta giriniz.", Toast.LENGTH_LONG).show()
             isCheckNull = false
-        }
-       else  if (kayit_sifre.text.length < 6) {
+        } else if (kayit_sifre.text.length < 6) {
             Toast.makeText(this@KayitOl, "Şifreniz en az 6 karakterden oluşmaktadır.", Toast.LENGTH_LONG).show()
             isCheckNull = false
 
@@ -119,13 +110,14 @@ class KayitOl : AppCompatActivity() {
     fun isEmailValid(email: CharSequence?): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
+
     companion object {
         const val IS_CHECKED = "isChecked"
     }
 
-    fun observeLiveData(){
+    fun observeLiveData() {
         kayitOlFragmentViewModel.kayitOlResponse.observe(this, Observer {
-            Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
+            Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
         })
     }
 }

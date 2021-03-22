@@ -22,16 +22,15 @@ interface FutbolAPI {
     companion object {
         private const val MACLAR = "maclar"
         private const val NEW_USER = "newUser"
-        private const val NEW_SKOR ="newSkor"
-
+        private const val NEW_SKOR = "newSkor"
     }
 
     @GET(MACLAR)
     fun getFutbol(): Single<List<GetMaclarItem>>
 
     @POST(NEW_USER)
-    fun newUserRegister(@Body body : RegisterUserItem) : Single<ResultResponse>
+    fun newUserRegister(@Body body: RegisterUserItem): Single<ResultResponse>
 
     @POST(NEW_SKOR)
-    fun  newSonucRegister(@Body body: SkorTahminEt) : Single<ResultResponse>
+    fun newSonucRegister(@Body body: SkorTahminEt): Single<ResultResponse>
 }
