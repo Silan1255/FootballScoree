@@ -4,39 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".pages.LoginScreen">
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/baslik"
-            android:layout_width="match_parent"
+            android:layout_width="224dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="100dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="5"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/sporr"
+            android:fontFamily="@font/walter_turncoat"
             android:text="@string/giris_title"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40dp" />
     </LinearLayout>
+
     <EditText
         android:id="@+id/edt_mail_adresi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/sifre_edittext_custom_style"
+        android:background="@drawable/edittext_custom_style"
         android:hint="@string/mail_hint"
-        android:paddingLeft="5dp"
+        android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
         android:textSize="20dp" />
+
     <EditText
         android:id="@+id/edt_sifre"
         android:layout_width="match_parent"
@@ -44,7 +50,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/sifre_edittext_custom_style"
+        android:background="@drawable/edittext_custom_style"
+        android:fontFamily="@font/bentham"
         android:hint="@string/sifre_hint"
         android:inputType="numberPassword"
         android:paddingLeft="5dp"
@@ -52,33 +59,42 @@
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
         android:textSize="20dp" />
+
     <CheckBox
         android:id="@+id/cb_beni_unutma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/beni_unutma"
-        android:textColor="@color/black" />
-    <Button
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_giris_yapiniz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/giris_yapiniz_button_custom_style"
+        android:background="@drawable/bbutton_custom_style"
+        android:gravity="center"
+        android:padding="15dp"
         android:text="@string/button_giris_yapiniz"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15dp" />
+
     <TextView
         android:id="@+id/txt_kayit_yapmadiysaniz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="250dp"
         android:clickable="true"
         android:gravity="center"
         android:onClick="onClick"
         android:text="@string/kayit_yapmadiysaniz_tiklayin"
-        android:textSize="20dp"
-        tools:ignore="OnClick" />
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        tools:ignore="OnClick"
+
+        />
 </LinearLayout>

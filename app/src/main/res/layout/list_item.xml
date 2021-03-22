@@ -6,7 +6,7 @@
     android:layout_marginTop="20dp"
     android:layout_marginRight="20dp"
     android:layout_weight="10"
-    android:background="@drawable/sifre_edittext_custom_style"
+    android:background="@drawable/edittext_custom_style"
     android:gravity="center"
     android:orientation="horizontal"
     android:padding="10dp"
@@ -22,7 +22,7 @@
         android:padding="4dp"/>
 
     <TextView
-        android:id="@+id/MacSonucu"
+        android:id="@+id/MacSonucTeam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"

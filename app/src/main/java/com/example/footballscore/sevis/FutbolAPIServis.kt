@@ -4,6 +4,7 @@ import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
 import com.example.footballscore.model.maclar.SkorTahminEt
 import com.example.footballscore.model.user.RegisterUserItem
+import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -18,9 +19,12 @@ class FutbolAPIServis {
     //futbolcanliskor/liveDataFutbolSkor.php
 
     private val BASE_URL = "http://oyunpuanla.com/futbolSkor/public/index.php/"
+    var gson = GsonBuilder()
+        .setLenient()
+        .create()
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(FutbolAPI::class.java)
@@ -29,11 +33,11 @@ class FutbolAPIServis {
         return  api.getFutbol()
     }
 
-    fun setNewUser(body : RegisterUserItem) : Single<ResultResponse>{
+    fun setNewUser(body: RegisterUserItem) : Single<ResultResponse>{
         return api.newUserRegister(body)
     }
 
-    fun setNewTakim(body : SkorTahminEt) : Single<ResultResponse> {
+    fun setNewTakim(body: SkorTahminEt) : Single<ResultResponse> {
         return api.newSonucRegister(body)
     }
 
