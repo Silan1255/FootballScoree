@@ -9,7 +9,7 @@
     <string name="sifre_hint">Şifre</string>
     <string name="beni_unutma">Beni Unutma</string>
     <string name="button_giris_yapiniz">GİRİŞ YAPINIZ</string>
-    <string name="kayit_yapmadiysaniz_tiklayin">Kayıt yapmadıysanız tıklayın...</string>
+    <string name="kayit_yapmadiysaniz_tiklayin">Kayıt yapmadıysanız tıklayın</string>
 
     //KayitOl
     <string name="kayit_title">MAÇ SKOR TAHMİNİ</string>

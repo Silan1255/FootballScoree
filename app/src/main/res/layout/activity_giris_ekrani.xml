@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background_quarter"
     android:orientation="vertical"
     tools:context=".pages.LoginScreen">
 
@@ -21,10 +21,11 @@
             android:layout_marginTop="100dp"
             android:layout_marginRight="40dp"
             android:layout_weight="1"
-            android:drawableRight="@drawable/sporr"
-            android:fontFamily="@font/walter_turncoat"
+            android:drawableRight="@drawable/running"
+            android:drawableTint="#407a8e"
+            android:fontFamily="@font/faster_one"
             android:text="@string/giris_title"
-            android:textColor="@color/white"
+            android:textColor="#407a8e"
             android:textSize="40dp" />
     </LinearLayout>
 
@@ -65,6 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/beni_unutma"
         android:textColor="@color/black"
         android:textSize="15dp" />
@@ -86,13 +88,13 @@
     <TextView
         android:id="@+id/txt_kayit_yapmadiysaniz"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_height="match_parent"
         android:clickable="true"
-        android:gravity="center"
+        android:gravity="bottom|center"
+        android:layout_marginBottom="20dp"
         android:onClick="onClick"
         android:text="@string/kayit_yapmadiysaniz_tiklayin"
-        android:textColor="@color/white"
+        android:textColor="#407a8e"
         android:textSize="18dp"
         tools:ignore="OnClick" />
 </LinearLayout>

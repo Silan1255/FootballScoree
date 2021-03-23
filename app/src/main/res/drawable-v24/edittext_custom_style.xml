@@ -13,7 +13,7 @@
 
         />
     <stroke
-        android:width="0.5dp"
-        android:color="@color/black" />
+        android:width="2dp"
+        android:color="#407a8e" />
 
 </shape>
