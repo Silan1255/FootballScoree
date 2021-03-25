@@ -1,40 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/common_google_signin_btn_text_dark"
     android:orientation="vertical"
     tools:context="view.HomeFragment">
 
-    <include
-        android:id="@+id/navbar_home"
-        layout="@layout/navbar_home" />
+    <!-- <include
+         android:id="@+id/navbar_home"
+         layout="@layout/navbar_home" />-->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:elevation="10dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Anasayfa"
+                android:textColor="#1E3347"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/goNotifiList"
+                    style="?attr/actionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_notifications_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/cart_badge"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|end|top"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="-5dp"
+                        android:layout_marginRight="-5dp"
+                        android:background="@drawable/rounded_corner"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:textSize="10sp" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="221dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/huy" />
-
+        android:scaleType="fitXY"
+        android:src="@drawable/huy"
+        android:contentDescription="image" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tamamlanmış maçlar"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/dekko"
-        android:textSize="20dp"
-        android:textColor="@color/charcoal_grey"/>
-
-    <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/bluish_grey" />
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/rsz_running"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="Tamamlanmış maçlar"
+        android:textColor="@color/black_cc"
+        android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/futbol_listesi"

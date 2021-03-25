@@ -46,8 +46,7 @@
     <string name="title_activity_tahmin_menu">MainActivity</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-
-
+    <string name="ms">MS</string>
 
 
 </resources>
