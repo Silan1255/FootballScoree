@@ -8,29 +8,24 @@
     android:orientation="vertical"
     tools:context=".pages.LoginScreen">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/baslik"
-            android:layout_width="224dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="40dp"
-            android:layout_weight="1"
-            android:drawableRight="@drawable/running"
-            android:drawableTint="#407a8e"
-            android:fontFamily="@font/faster_one"
-            android:text="@string/giris_title"
-            android:textColor="#407a8e"
-            android:textSize="40dp" />
-    </LinearLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/baslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="40dp"
+        android:drawableEnd="@drawable/running"
+        android:drawableTint="#407a8e"
+        android:fontFamily="@font/faster_one"
+        android:text="@string/giris_title"
+        android:textColor="#407a8e"
+        android:textSize="40dp" />
 
     <EditText
         android:id="@+id/edt_mail_adresi"
+        style="@style/MyCustomeEditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -52,21 +47,21 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/edittext_custom_style"
-        android:fontFamily="@font/bentham"
+        android:fontFamily="monospace"
         android:hint="@string/sifre_hint"
         android:inputType="numberPassword"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <CheckBox
         android:id="@+id/cb_beni_unutma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/beni_unutma"
         android:textColor="@color/black"
         android:textSize="15dp" />
@@ -82,19 +77,30 @@
         android:gravity="center"
         android:padding="15dp"
         android:text="@string/button_giris_yapiniz"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="15dp" />
 
-    <TextView
-        android:id="@+id/txt_kayit_yapmadiysaniz"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
         android:gravity="bottom|center"
-        android:layout_marginBottom="20dp"
-        android:onClick="onClick"
-        android:text="@string/kayit_yapmadiysaniz_tiklayin"
-        android:textColor="#407a8e"
-        android:textSize="18dp"
-        tools:ignore="OnClick" />
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_kayit_yapmadiysaniz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:drawableTop="@drawable/okkk"
+            android:drawableTint="#407a8e"
+            android:fontFamily="sans-serif-smallcaps"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/kayit_yapmadiysaniz_tiklayin"
+            android:textColor="#407a8e"
+            android:textSize="18sp"
+            tools:ignore="OnClick" />
+    </LinearLayout>
+
 </LinearLayout>

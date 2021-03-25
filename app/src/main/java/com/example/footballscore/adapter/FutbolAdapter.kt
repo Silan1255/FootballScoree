@@ -10,8 +10,9 @@ import kotlinx.android.synthetic.main.list_item.view.*
 
 class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem>) : RecyclerView.Adapter<FutbolAdapter.FutbolViewHolder>() {
 
-    class FutbolViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    var macItemClıckLıstener: (String, String) -> Unit = { _,_ ->}
 
+    class FutbolViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FutbolViewHolder {
@@ -23,7 +24,10 @@ class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem>) : Recycler
     override fun onBindViewHolder(holder: FutbolViewHolder, position: Int) {
         holder.itemView.FirstTeam.text = futbolModelListesi.get(position).firsTeam
         holder.itemView.SecondTeam.text = futbolModelListesi.get(position).secondTeam
-        holder.itemView.MacSonucTeam.text = futbolModelListesi.get(position).macSonucu
+        //holder.itemView.MacSonucTeam.text = futbolModelListesi.get(position).macSonucu
+        holder.itemView.setOnClickListener {
+            macItemClıckLıstener(futbolModelListesi[position].firsTeam, futbolModelListesi[position].skorID)
+        }
     }
 
     override fun getItemCount(): Int = futbolModelListesi.size

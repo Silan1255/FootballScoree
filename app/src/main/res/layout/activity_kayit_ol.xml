@@ -4,40 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background_quarter_register"
     android:orientation="vertical"
     tools:context=".view.KayitOl">
 
-    <LinearLayout
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/baslik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/baslikk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="40dp"
-            android:drawableRight="@drawable/sporr"
-            android:fontFamily="@font/walter_turncoat"
-            android:text="@string/kayit_title"
-            android:textColor="@color/white"
-            android:textSize="40dp" />
-    </LinearLayout>
-
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="40dp"
+        android:drawableStart="@drawable/running"
+        android:drawablePadding="12dp"
+        android:drawableTint="#407a8e"
+        android:fontFamily="@font/faster_one"
+        android:text="@string/kayit_title"
+        android:textColor="#407a8e"
+        android:textSize="40dp" />
 
     <EditText
         android:id="@+id/kayit_mail"
+        style="@style/MyCustomeEditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/edittext_custom_style"
+        android:fontFamily="monospace"
         android:hint="@string/kayit_mail_hint"
-        android:paddingLeft="5dp"
+        android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
@@ -45,12 +43,14 @@
 
     <EditText
         android:id="@+id/kayit_kullanici_adi"
+        style="@style/MyCustomeEditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/edittext_custom_style"
+        android:fontFamily="monospace"
         android:hint="@string/kayit_Kullanici_adiniz"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
@@ -60,12 +60,14 @@
 
     <EditText
         android:id="@+id/kayit_sifre"
+        style="@style/MyCustomeEditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/edittext_custom_style"
+        android:fontFamily="monospace"
         android:hint="@string/kayit_sifre_hint"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
@@ -78,27 +80,31 @@
         android:id="@+id/btn_kayit_ol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/bbutton_custom_style"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="15dp"
         android:text="@string/button_kayip_yap"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_kayit_yaptiysaniz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="190dp"
         android:clickable="true"
-        android:gravity="center"
+        android:drawableTop="@drawable/okk"
+        android:drawablePadding="20dp"
+        android:drawableTint="#407a8e"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="bottom|center"
         android:onClick="onClick"
         android:text="@string/kayit_yaptiysaniz_tiklayin"
-        android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textColor="#407a8e"
+        android:textSize="18sp"
         tools:ignore="OnClick" />
 
 </LinearLayout>
