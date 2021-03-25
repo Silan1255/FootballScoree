@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="12dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginEnd="12dp"
     android:layout_weight="10"
-    android:background="@drawable/shadow_back"
+    android:background="@drawable/shadow_runnign"
     android:elevation="10dp"
     android:gravity="center"
     android:orientation="horizontal"
@@ -19,12 +20,14 @@
         android:layout_weight="3"
         android:gravity="center"
         android:padding="4dp"
+        tools:text="Fenerbahçe"
         android:textColor="@color/black"
         android:textSize="16dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
@@ -32,17 +35,36 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="1dp"
             android:text="1"
+            android:gravity="center"
             android:textSize="20sp"/>
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/charcoal_grey"
-            android:backgroundTint="@color/benefit_title"
-            android:elevation="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:id="@+id/myImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_quarter" />
+
+            <TextView
+                android:id="@+id/myImageViewText"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/myImageView"
+                android:layout_alignTop="@+id/myImageView"
+                android:layout_alignRight="@+id/myImageView"
+                android:layout_alignBottom="@+id/myImageView"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="MS"
+                android:textColor="#000000" />
+        </RelativeLayout>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,6 +81,7 @@
         android:layout_weight="3"
         android:gravity="center"
         android:padding="4dp"
+        tools:text="Galatasaray"
         android:textColor="@color/black"
         android:textSize="16dp" />
 
