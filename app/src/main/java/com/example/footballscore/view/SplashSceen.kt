@@ -20,7 +20,7 @@ class SplashSceen : AppCompatActivity() {
             val intent = Intent(this, LoginScreen::class.java)
             startActivity(intent)
             finish()
-        }, 10000)
+        }, 5000)
 
         // R.color.white.StatusBarColorChange(this)
     }

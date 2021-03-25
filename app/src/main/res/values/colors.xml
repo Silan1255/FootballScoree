@@ -70,4 +70,5 @@
     <color name="light_grayish_orange">#fcf4ec</color>
     <color name="search_text_color">#91a2a4</color>
     <color name="login_status_bar_color">#005c8d</color>
+    <color name="icon_run_color">#407a8e</color>
 </resources>

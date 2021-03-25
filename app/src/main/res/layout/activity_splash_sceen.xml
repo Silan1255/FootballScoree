@@ -11,10 +11,10 @@
 
     <TextView
         android:id="@+id/txt_tahmin_ediyorum"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:layout_weight="10"
         android:drawableTop="@drawable/running"
         android:drawablePadding="20dp"
@@ -23,5 +23,5 @@
         android:gravity="center"
         android:text="@string/splash_screen_title"
         android:textColor="#407a8e"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 </LinearLayout>

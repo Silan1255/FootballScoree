@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="view.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <include
+        android:id="@+id/navbar_home"
+        layout="@layout/navbar_home" />
+
+    <ImageView
         android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/huy" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:gravity="start"
-        android:padding="20dp"
-        android:text="MAÇ SKORLARI"
-        android:textColor="@color/white" />
+        android:text="Tamamlanmış maçlar"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dekko"
+        android:textSize="20dp"
+        android:textColor="@color/charcoal_grey"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.05dp"
-        android:background="@color/white"
-        android:elevation="10dp" />
-
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/bluish_grey" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/futbol_listesi"
