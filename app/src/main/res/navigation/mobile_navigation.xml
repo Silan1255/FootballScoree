@@ -15,13 +15,13 @@
         android:id="@+id/fragment_quality"
         android:name="com.example.footballscore.view.HomeFragment"
         android:label="@string/title_rank"
-        tools:layout="@layout/fragment_quality" />
+        tools:layout="@layout/fragment_tahmin_et" />
 
     <fragment
-        android:id="@+id/fragment_search"
-        android:name="com.example.footballscore.view.SearchFragment"
-        android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        android:id="@+id/fragment_profil"
+        android:name="com.example.footballscore.view.ProfilFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_profil" />
 
     <fragment
         android:id="@+id/fragment_football"

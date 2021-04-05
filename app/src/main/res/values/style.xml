@@ -20,4 +20,8 @@
         <item name="android:maxLines">1</item>
         <item name="android:fontFamily">monospace</item>
     </style>
+
+    <style name="MyBottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/dekko</item>
+    </style>
 </resources>

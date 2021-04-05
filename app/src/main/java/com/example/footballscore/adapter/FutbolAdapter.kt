@@ -8,7 +8,7 @@ import com.example.footballscore.R
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem>) : RecyclerView.Adapter<FutbolAdapter.FutbolViewHolder>() {
+class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem> ) : RecyclerView.Adapter<FutbolAdapter.FutbolViewHolder>(){
 
     var macItemClıckLıstener: (String, String) -> Unit = { _,_ ->}
 
@@ -37,4 +37,6 @@ class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem>) : Recycler
         futbolModelListesi.addAll(yeniFutbolModelListesi)
         notifyDataSetChanged()
     }
+    //Servıs yazılacak
+    //Yenı bır tane adapter
 }

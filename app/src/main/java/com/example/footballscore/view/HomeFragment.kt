@@ -42,7 +42,6 @@ class HomeFragment : Fragment() {
 
         observeLiveData()
     }
-
     fun observeLiveData() {
 
         homeFragmentViewModel.takimler.observe(viewLifecycleOwner, Observer { Takimler ->

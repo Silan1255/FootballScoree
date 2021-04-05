@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
             var fragment: Fragment? = null
             when (item.itemId) {
                 R.id.navigation_home -> fragment = HomeFragment()
-                R.id.navigation_search -> fragment = SearchFragment()
+                R.id.navigation_search -> fragment = ProfilFragment()
                 R.id.navigation_football -> fragment = FootballFragment()
-                R.id.navigation_qualityy -> fragment = QualityFragment()
+                R.id.navigation_qualityy -> fragment = TahminEtFragment()
             }
             loadFragment(fragment)
         }
