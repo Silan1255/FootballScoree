@@ -12,6 +12,7 @@ import androidx.core.content.edit
 import com.example.footballscore.databinding.ActivityGirisEkraniBinding
 import com.example.footballscore.view.KayitOl
 import com.example.footballscore.view.MainActivity
+import com.example.footballscore.viewModel.ShredPreferenc
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_giris_ekrani.*
@@ -27,6 +28,7 @@ class LoginScreen : AppCompatActivity() {
     var isRemembered: Boolean = false
     var mailAdresi = ""
     var sifre = ""
+    var prefHelper = ShredPreferenc()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +57,7 @@ class LoginScreen : AppCompatActivity() {
                         if (task.isSuccessful) {
 
                             val firebaseUser: FirebaseUser = task.result!!.user!!
+                            prefHelper.save(this@LoginScreen,"userId", firebaseUser.providerId)
                             Toast.makeText(this@LoginScreen, "Giriş  başarılı.", Toast.LENGTH_LONG).show()
 
                             val intent = Intent(this@LoginScreen, MainActivity::class.java)

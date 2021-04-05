@@ -10,8 +10,7 @@
     android:background="@drawable/shadow_runnign"
     android:elevation="10dp"
     android:gravity="center"
-    android:orientation="horizontal"
-  >
+    android:orientation="horizontal" >
 
     <TextView
         android:id="@+id/FirstTeam"

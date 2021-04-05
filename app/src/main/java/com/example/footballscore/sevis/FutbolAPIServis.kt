@@ -3,6 +3,8 @@ package com.example.footballscore.sevis
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
 import com.example.footballscore.model.maclar.SkorTahminEt
+import com.example.footballscore.model.user.GetUser
+import com.example.footballscore.model.user.GetUser.GetUserItem
 import com.example.footballscore.model.user.RegisterUserItem
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
@@ -29,9 +31,15 @@ class FutbolAPIServis {
         .build()
         .create(FutbolAPI::class.java)
 
+
     fun getData(): Single<List<GetMaclarItem>> {
         return api.getFutbol()
     }
+
+    fun getUser(userId : Int): Single<List<GetUserItem>> {
+        return api.getUser(userId)
+    }
+
 
     fun setNewUser(body: RegisterUserItem): Single<ResultResponse> {
         return api.newUserRegister(body)
@@ -40,6 +48,4 @@ class FutbolAPIServis {
     fun setNewTakim(body: SkorTahminEt): Single<ResultResponse> {
         return api.newSonucRegister(body)
     }
-
-
 }
