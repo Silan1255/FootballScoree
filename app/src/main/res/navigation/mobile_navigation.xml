@@ -15,7 +15,7 @@
         android:id="@+id/fragment_quality"
         android:name="com.example.footballscore.view.HomeFragment"
         android:label="@string/title_rank"
-        tools:layout="@layout/fragment_tahmin_et" />
+        tools:layout="@layout/fragment_football" />
 
     <fragment
         android:id="@+id/fragment_profil"

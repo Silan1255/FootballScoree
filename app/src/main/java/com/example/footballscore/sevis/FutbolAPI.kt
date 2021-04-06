@@ -2,7 +2,8 @@ package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
-import com.example.footballscore.model.maclar.SkorTahminEt
+import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
+import com.example.footballscore.model.skor_tahmin.SkorTahminEt
 import com.example.footballscore.model.user.GetUser.GetUserItem
 import com.example.footballscore.model.user.RegisterUserItem
 import io.reactivex.Single
@@ -23,6 +24,7 @@ interface FutbolAPI {
         private const val MACLAR = "maclar"
         private const val NEW_USER = "newUser"
         private const val NEW_SKOR = "newSkor"
+        private const val GET_CANLI_MACLAR= "maclar"
         private const val GET_USER = "getUser/{userId}"
     }
     @GET(MACLAR)
@@ -36,5 +38,8 @@ interface FutbolAPI {
 
     @POST(NEW_SKOR)
     fun newSonucRegister(@Body body: SkorTahminEt): Single<ResultResponse>
+
+    @GET(GET_CANLI_MACLAR)
+    fun  getCanliMaclar(): Single<List<GetTahminMaclar.GetTahminMaclarItem>>
 
 }

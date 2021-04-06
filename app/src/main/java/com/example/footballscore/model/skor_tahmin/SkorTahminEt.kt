@@ -1,4 +1,4 @@
-package com.example.footballscore.model.maclar
+package com.example.footballscore.model.skor_tahmin
 
 
 import com.google.gson.annotations.SerializedName

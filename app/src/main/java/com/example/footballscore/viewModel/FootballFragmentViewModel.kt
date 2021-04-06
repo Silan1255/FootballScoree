@@ -1,34 +1,39 @@
 package com.example.footballscore.viewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.footballscore.model.ResultResponse
-import com.example.footballscore.model.maclar.SkorTahminEt
+import com.example.footballscore.model.skor_tahmin.GetTahminMaclar.GetTahminMaclarItem
 import com.example.footballscore.sevis.FutbolAPIServis
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
+
 class FootballFragmentViewModel : ViewModel() {
+
     private val futbolAPIServis = FutbolAPIServis()
     private val dispoosable = CompositeDisposable()
 
-    val TahminEtResponse: MutableLiveData<ResultResponse> = MutableLiveData()
-    fun newTakimRegister(body: SkorTahminEt) {
-        dispoosable.add(
-            futbolAPIServis.setNewTakim(body)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<ResultResponse>() {
-                    override fun onSuccess(response: ResultResponse) {
-                        TahminEtResponse.value = response
-                        Log.i("good", response.toString())
-                    }
+    fun refreshData() {
+        GetData()
+    }
 
+    val takimlerTahmin = MutableLiveData<List<GetTahminMaclarItem>>()
+
+    private fun GetData() {
+        dispoosable.add(
+            futbolAPIServis.getCanliMac()
+                .subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<GetTahminMaclarItem>>() {
+                    override fun onSuccess(t: List<GetTahminMaclarItem>) {
+                        takimlerTahmin.value = t.filter { macTahminSkorItem ->
+                            macTahminSkorItem.tahminMacSonucu.trim().length <2
+
+                        }
+                    }
                     override fun onError(e: Throwable) {
-                        Log.i("hata", e.toString())
+                        e.printStackTrace()
                     }
                 })
         )

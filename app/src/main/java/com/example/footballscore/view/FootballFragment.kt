@@ -1,26 +1,25 @@
 package com.example.footballscore.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballscore.R
-import com.example.footballscore.model.maclar.SkorTahminEt
+import com.example.footballscore.adapter.TahminAdapter
 import com.example.footballscore.viewModel.FootballFragmentViewModel
-import com.example.footballscore.viewModel.HomeFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_football.*
 
 class FootballFragment : Fragment() {
 
     private lateinit var footballFragmentViewModel: FootballFragmentViewModel
 
-    var TahminFirst: String? = ""
-    var TahminSecond: String? = ""
-    var TahminSonuc: Int? = 0
+    private val tahminAdapter = TahminAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,23 +30,28 @@ class FootballFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_football, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        footballFragmentViewModel = ViewModelProviders.of(this).get(FootballFragmentViewModel::class.java)
+        footballFragmentViewModel= ViewModelProviders.of(this).get(FootballFragmentViewModel::class.java)
+        footballFragmentViewModel.refreshData()
 
-        TahminFirst = tahminFirst.text.toString()
-        TahminSecond = tahminSecond.text.toString()
+        futbol_tahmin_listesi.layoutManager = LinearLayoutManager(context)
+        futbol_tahmin_listesi.adapter = tahminAdapter
 
-        observeLiveData()
-
-        sonucuGonder.setOnClickListener {
-            footballFragmentViewModel.newTakimRegister(SkorTahminEt(tahminFirst.text.toString(), tahminSecond.text.toString(), macSonucu.text.toString()))
+        tahminAdapter.macTahminItemClıckLıstener= {macTahminAdi, macTahminID->
+            Toast.makeText(requireContext(), macTahminAdi + "-" + macTahminID, Toast.LENGTH_LONG).show()
         }
+        observierLivePredictionData()
+
     }
-    fun observeLiveData() {
-        footballFragmentViewModel.TahminEtResponse.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
+    fun observierLivePredictionData(){
+        footballFragmentViewModel.takimlerTahmin.observe(viewLifecycleOwner, Observer { TahminTakim ->
+            TahminTakim?.let {
+                futbol_tahmin_listesi.visibility= View.VISIBLE
+                tahminAdapter.gecmisTahminleriGuncelle(TahminTakim)
+            }
         })
     }
 }
