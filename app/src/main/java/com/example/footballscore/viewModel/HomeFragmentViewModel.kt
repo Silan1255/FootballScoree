@@ -28,12 +28,10 @@ class HomeFragmentViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<GetMaclarItem>>() {
                     override fun onSuccess(t: List<GetMaclarItem>) {
-                        Log.i("json", t.toString())
                         takimler.value = t.filter { macItem ->
                             macItem.macSonucu.trim().length > 2
                         }
                     }
-
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
                     }

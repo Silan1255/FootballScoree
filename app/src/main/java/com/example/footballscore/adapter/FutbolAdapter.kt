@@ -25,6 +25,8 @@ class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem> ) : Recycle
         holder.itemView.FirstTeam.text = futbolModelListesi.get(position).firsTeam
         holder.itemView.SecondTeam.text = futbolModelListesi.get(position).secondTeam
         holder.itemView.MacSonucuTeam.text = futbolModelListesi.get(position).macSonucu
+
+
         holder.itemView.setOnClickListener {
             macItemClıckLıstener(futbolModelListesi[position].firsTeam, futbolModelListesi[position].skorID)
         }

@@ -2,8 +2,8 @@ package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
-import com.example.footballscore.model.maclar.SkorTahminEt
-import com.example.footballscore.model.user.GetUser
+import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
+import com.example.footballscore.model.skor_tahmin.SkorTahminEt
 import com.example.footballscore.model.user.GetUser.GetUserItem
 import com.example.footballscore.model.user.RegisterUserItem
 import com.google.gson.GsonBuilder
@@ -40,6 +40,9 @@ class FutbolAPIServis {
         return api.getUser(userId)
     }
 
+    fun  getCanliMac(): Single<List<GetTahminMaclar.GetTahminMaclarItem>>{
+        return api.getCanliMaclar()
+    }
 
     fun setNewUser(body: RegisterUserItem): Single<ResultResponse> {
         return api.newUserRegister(body)

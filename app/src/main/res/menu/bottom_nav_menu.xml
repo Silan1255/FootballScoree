@@ -19,14 +19,14 @@
 
     <item
         android:checked="false"
-        android:id="@+id/navigation_qualityy"
+        android:id="@+id/navigation_sıralama"
         android:icon="@drawable/star"
         android:title=""
         app:showAsAction="ifRoom" />
 
     <item
         android:checked="false"
-        android:id="@+id/navigation_search"
+        android:id="@+id/navigation_user"
         android:icon="@drawable/user"
         android:title=""
         app:showAsAction="ifRoom" />

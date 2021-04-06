@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.footballscore.R
 
-class TahminEtFragment : Fragment() {
+class SiralamaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_tahmin_et, container, false)
+        return inflater.inflate(R.layout.fragment_siralama, container, false)
     }
 }
