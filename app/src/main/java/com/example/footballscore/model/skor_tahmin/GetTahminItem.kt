@@ -21,7 +21,10 @@ class GetTahminMaclar : ArrayList<GetTahminMaclar.GetTahminMaclarItem>() {
         @SerializedName("SkorID")
         val tahminSkorID: String,
         @SerializedName("UpdateDateTime")
-        val tahminUpdateDateTime: String
+        val tahminUpdateDateTime: String,
+        @SerializedName("LigImage")
+        val tahminImage: String
+
     )
 }
 

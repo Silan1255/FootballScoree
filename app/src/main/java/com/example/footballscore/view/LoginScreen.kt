@@ -57,7 +57,7 @@ class LoginScreen : AppCompatActivity() {
                         if (task.isSuccessful) {
 
                             val firebaseUser: FirebaseUser = task.result!!.user!!
-                            prefHelper.save(this@LoginScreen,"userId", firebaseUser.providerId)
+                            prefHelper.save(this@LoginScreen,"userId", firebaseUser.uid)
                             Toast.makeText(this@LoginScreen, "Giriş  başarılı.", Toast.LENGTH_LONG).show()
 
                             val intent = Intent(this@LoginScreen, MainActivity::class.java)
@@ -74,7 +74,6 @@ class LoginScreen : AppCompatActivity() {
             }
         }
     }
-
     private fun control() {
         sharedPreferences.edit {
             if (binding.cbBeniUnutma.isChecked) {

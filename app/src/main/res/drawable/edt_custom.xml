@@ -6,9 +6,9 @@
     <solid android:color="#f5f5f5" />
 
     <stroke
-        android:width="3dp"
-        android:color="@color/design_default_color_on_primary" />
+        android:width="1dp"
+        android:color="#407a8e" />
 
-    <corners android:radius="15dp"></corners>
+    <corners android:radius="5dp"></corners>
 
 </shape>

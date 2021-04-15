@@ -1,74 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tahmin_swip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_marginStart="12dp"
-    android:layout_marginBottom="10dp"
     android:layout_marginEnd="12dp"
+    android:layout_marginBottom="10dp"
     android:layout_weight="10"
-    android:background="@drawable/tahmin_emnu_deasing"
-    android:elevation="10dp"
-    android:gravity="center"
-    android:orientation="horizontal">
-    <TextView
-        android:id="@+id/TahminFirstTeam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:gravity="center"
-        android:padding="4dp"
-        tools:text="Fenerbahçe"
-        android:textColor="@color/black"
-        android:textSize="16dp" />
-
+    app:dragEdge="right"
+    app:mode="same_level">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:foregroundGravity="center"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
+        android:orientation="horizontal">
 
-        <TextView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/guessButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Canlı"
-            android:id="@+id/canliTeam"
-            android:textSize="15dp"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="0-3"
-            android:id="@+id/canliSkor"
-            android:textSize="40dp"
-            android:layout_weight="1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="8'"
-            android:id="@+id/canliDakika"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            android:layout_marginBottom="4dp"/>
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:contentDescription="Marge"
+            android:foregroundGravity="center"
+            android:src="@drawable/running"
+            app:backgroundTint="#e0e4ec" />
+
+        <include
+            android:id="@+id/progressView"
+            layout="@layout/fragment_bottom_sheet"
+            android:visibility="gone" />
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/TahminSecoundTeam"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_height="100dp"
+        android:background="@drawable/tahmin_emnu_deasing"
+        android:elevation="10dp"
         android:gravity="center"
-        android:padding="4dp"
-        tools:text="Fenerbahçe"
-        android:textColor="@color/black"
-        android:textSize="16dp" />
-</LinearLayout>
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ligName"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/TahminFirstTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            tools:text="Fenerbahçe" />
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/canliTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Canlı"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/canliSkor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0-3"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/canliDakika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="8'"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TahminSecoundTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            tools:text="Fenerbahçe" />
+    </LinearLayout>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

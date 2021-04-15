@@ -27,10 +27,7 @@ class FootballFragmentViewModel : ViewModel() {
                 .subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<GetTahminMaclarItem>>() {
                     override fun onSuccess(t: List<GetTahminMaclarItem>) {
-                        takimlerTahmin.value = t.filter { macTahminSkorItem ->
-                            macTahminSkorItem.tahminMacSonucu.trim().length <2
-
-                        }
+                        takimlerTahmin.value = t
                     }
                     override fun onError(e: Throwable) {
                         e.printStackTrace()

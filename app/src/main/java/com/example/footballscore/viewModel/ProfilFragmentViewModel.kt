@@ -18,14 +18,12 @@ class ProfilFragmentViewModel : ViewModel() {
 
     val kullaniciAdi = MutableLiveData<List<GetUserItem>>()
 
-    fun getUserData(userId : Int) {
+    fun getUserData(userId : String) {
         dispoosable.add(
             futbolAPIServis.getUser(userId)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-
                 .subscribeWith(object : DisposableSingleObserver<List<GetUserItem>>() {
-
                     override fun onSuccess(t:List<GetUserItem>) {
                         Log.i("json", t.toString())
                         kullaniciAdi.value = t

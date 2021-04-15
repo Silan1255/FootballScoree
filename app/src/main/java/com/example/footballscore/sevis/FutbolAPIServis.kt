@@ -36,7 +36,7 @@ class FutbolAPIServis {
         return api.getFutbol()
     }
 
-    fun getUser(userId : Int): Single<List<GetUserItem>> {
+    fun getUser(userId : String): Single<List<GetUserItem>> {
         return api.getUser(userId)
     }
 

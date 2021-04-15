@@ -31,7 +31,7 @@ interface FutbolAPI {
     fun getFutbol(): Single<List<GetMaclarItem>>
 
     @GET(GET_USER)
-    fun getUser(@Path("userId") userId : Int): Single<List<GetUserItem>>
+    fun getUser(@Path("userId") userId : String): Single<List<GetUserItem>>
 
     @POST(NEW_USER)
     fun newUserRegister(@Body body: RegisterUserItem): Single<ResultResponse>

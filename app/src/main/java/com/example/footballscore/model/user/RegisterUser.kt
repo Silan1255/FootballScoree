@@ -9,6 +9,8 @@ data class RegisterUserItem(
     @SerializedName("UserName")
     val userName: String,
     @SerializedName("UserPassword")
-    val userPassword: String
+    val userPassword: String,
+    @SerializedName("UserUid")
+    val userUid: String
 )
 

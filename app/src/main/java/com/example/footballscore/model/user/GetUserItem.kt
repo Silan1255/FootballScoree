@@ -14,6 +14,7 @@ class GetUser : ArrayList<GetUser.GetUserItem>() {
         @SerializedName("UserName")
         val userName: String,
         @SerializedName("UserPassaword")
-        val userPassaword: String
+        val userPassaword: String,
+
     )
 }
