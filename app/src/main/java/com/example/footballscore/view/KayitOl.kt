@@ -37,7 +37,6 @@ class KayitOl : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityKayitOlBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
-        // R.color.charcoal_grey_75.charcoal_grey(this)
 
         kayitOlFragmentViewModel = ViewModelProviders.of(this).get(KayitOlFragmentViewModel::class.java)
 
@@ -65,13 +64,14 @@ class KayitOl : AppCompatActivity() {
                         .addOnCompleteListener(
                             OnCompleteListener<AuthResult> { task ->
                                 if (task.isSuccessful) {
-                                    kayitOlFragmentViewModel.newUserRegister(RegisterUserItem(MailAdresi, kayitKullaniciAdi.text.toString(), sifre))
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
+                                    kayitOlFragmentViewModel.newUserRegister(RegisterUserItem(MailAdresi, kayitKullaniciAdi.text.toString(), sifre, firebaseUser.uid))
                                     Toast.makeText(this@KayitOl, "kayıt işlemini başarıyla tamamladınız.", Toast.LENGTH_LONG).show()
                                     val intent = Intent(this@KayitOl, LoginScreen::class.java)
 
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("user_id", firebaseUser.uid)
+                                    intent.putExtra("user_uid", firebaseUser.uid)
                                     intent.putExtra("email_id", MailAdresi)
                                     startActivity(intent)
                                     finish()

@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         futbol_listesi.layoutManager = LinearLayoutManager(context)
         futbol_listesi.adapter = futbolAdapter
 
-        futbolAdapter.macItemClıckLıstener = {macAdi, macID->
+        futbolAdapter.macItemClıckLıstener = { macAdi, macID->
             Toast.makeText(requireContext(), macAdi + "-" + macID, Toast.LENGTH_LONG).show()
         }
 

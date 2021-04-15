@@ -113,4 +113,6 @@ dependencies {
     implementation 'ru.rambler.android:swipe-layout:1.1.0'
 
     implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

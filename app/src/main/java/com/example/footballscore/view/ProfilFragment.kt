@@ -30,13 +30,10 @@ class ProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         profilFragmentViewModel = ViewModelProviders.of(this).get(ProfilFragmentViewModel::class.java)
-        prefHelper.getValue(requireContext(),"userId").toIntOrNull()?.let { profilFragmentViewModel.getUserData(userId = it) }
-
-
+        profilFragmentViewModel.getUserData(prefHelper.getValue(requireContext(),"userId")) //shared'a eklediğimiz uid i getUser servisine verdik
         observeLiveData()
 
     }
-
     fun observeLiveData() {
         profilFragmentViewModel.kullaniciAdi.observe(viewLifecycleOwner, Observer { kullaniciAdin ->
             kullaniciAdin?.let {

@@ -3,7 +3,7 @@
     <style name="Theme.FootballScore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">#e0e4ec</item>///Burası sanırım status barın rengi
+        <item name="colorPrimaryVariant">#e0e4ec</item>///Burası  status barın rengi
         <item name="colorOnPrimary">#407a8e</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

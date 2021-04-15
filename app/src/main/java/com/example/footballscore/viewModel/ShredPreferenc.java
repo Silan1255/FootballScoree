@@ -7,10 +7,10 @@ public class ShredPreferenc {
     static final String PREF_NAME = "Login";
 
     public void save(Context context, String key, String value) {
-        SharedPreferences settings = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
+        SharedPreferences settings = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(key, value);
-        editor.commit();
+        editor.apply();
     }
 
     public void saveBoolean(Context context, String key, Boolean value) {

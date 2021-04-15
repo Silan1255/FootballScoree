@@ -6,6 +6,7 @@
         <item>@font/alegreya_sans_thin</item>
         <item>@font/allerta_stencil</item>
         <item>@font/armata</item>
+        <item>@font/audiowide</item>
         <item>@font/bentham</item>
         <item>@font/brawler</item>
         <item>@font/dekko</item>
@@ -15,7 +16,9 @@
         <item>@font/jacques_francois_shadow</item>
         <item>@font/monoton</item>
         <item>@font/seaweed_script</item>
+        <item>@font/trade_winds</item>
         <item>@font/vast_shadow</item>
         <item>@font/walter_turncoat</item>
+        <item>@font/yrsa_semibold</item>
     </array>
 </resources>
