@@ -7,9 +7,7 @@ data class SkorTahminEt(
  @SerializedName("TahminFirst")
  val tahminFirst: String,
  @SerializedName("TahminSecond")
- val tahminSecond: String,
- @SerializedName("TahminSonuc")
- val tahminSonuc: String
+ val tahminSecond: String
 )
 
 

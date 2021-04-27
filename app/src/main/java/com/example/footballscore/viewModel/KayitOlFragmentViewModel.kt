@@ -17,6 +17,8 @@ class KayitOlFragmentViewModel : ViewModel() {
     private val futbolAPIServis = FutbolAPIServis()
     private val dispoosable = CompositeDisposable()
     val kayitOlResponse: MutableLiveData<ResultResponse> = MutableLiveData()
+
+
     fun newUserRegister(body: RegisterUserItem) {
         dispoosable.add(
             futbolAPIServis.setNewUser(body)

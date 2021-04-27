@@ -38,6 +38,4 @@ class FutbolAdapter(val futbolModelListesi: ArrayList<GetMaclarItem>) : Recycler
         futbolModelListesi.addAll(yeniFutbolModelListesi)
         notifyDataSetChanged()
     }
-    //Servıs yazılacak
-    //Yenı bır tane adapter
 }
