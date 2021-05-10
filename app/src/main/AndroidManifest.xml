@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.footballscore">
+    package="com.example.footballscore" >
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,14 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballScore"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".sheet1"
+            android:label="@string/title_activity_sheet1" >
+        </activity>
         <activity
             android:name=".view.TahminMenu"
             android:label="@string/title_activity_tahmin_menu" />
         <activity android:name=".view.MainActivity" />
         <activity android:name=".pages.LoginScreen" />
         <activity android:name=".view.KayitOl" />
-        <activity android:name=".view.SplashSceen">
+        <activity android:name=".view.SplashSceen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

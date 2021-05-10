@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_football.view.*
 import kotlinx.android.synthetic.main.tahmin_list_item.view.*
 
 class TahminAdapter(val futbolTahminModelListesi: ArrayList<GetTahminMaclar.GetTahminMaclarItem> ): RecyclerView.Adapter<TahminAdapter.TahminViewHolder>() {
-    var macTahminItemClıckLıstener: (String, String, String) -> Unit = { _,_,_ ->}
+    var macTahminItemClıckLıstener: (String, String, String,String) -> Unit = { _,_,_,_ ->}
     class TahminViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
@@ -35,7 +35,10 @@ class TahminAdapter(val futbolTahminModelListesi: ArrayList<GetTahminMaclar.GetT
         holder.itemView.guessButton.setOnClickListener {
             macTahminItemClıckLıstener(futbolTahminModelListesi[position].tahminFirsTeam,
                 futbolTahminModelListesi[position].tahminSecondTeam,
-                futbolTahminModelListesi[position].tahminSkorID)
+                futbolTahminModelListesi[position].tahminSkorID,
+                futbolTahminModelListesi[position].tahminDakika
+            )
+
         }
     }
 

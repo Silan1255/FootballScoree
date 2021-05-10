@@ -21,7 +21,5 @@ class SplashSceen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 5000)
-
-        // R.color.white.StatusBarColorChange(this)
     }
 }
