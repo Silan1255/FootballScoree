@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import com.example.footballscore.R
 import com.example.footballscore.adapter.FutbolAdapter
 import com.example.footballscore.viewModel.ProfilFragmentViewModel
@@ -33,6 +34,9 @@ class ProfilFragment : Fragment() {
         profilFragmentViewModel.getUserData(prefHelper.getValue(requireContext(),"userId")) //shared'a eklediğimiz uid i getUser servisine verdik
         observeLiveData()
 
+        textView5.setOnClickListener {
+            Navigation.createNavigateOnClickListener(R.id.action_navigation_home_to_commentFragment).onClick(view)
+        }
     }
     fun observeLiveData() {
         profilFragmentViewModel.kullaniciAdi.observe(viewLifecycleOwner, Observer { kullaniciAdin ->

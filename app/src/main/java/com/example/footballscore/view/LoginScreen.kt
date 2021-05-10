@@ -34,8 +34,6 @@ class LoginScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGirisEkraniBinding.inflate(LayoutInflater.from(applicationContext))
         setContentView(binding.root)
-
-        // R.color.charcoal_grey_75.StatusBarColorChange(LoginScreen)
         sharedPreferences = getSharedPreferences("com.example.footballscore", Context.MODE_PRIVATE)
 
         isRemembered = sharedPreferences.getBoolean(IS_CHECKED, false)
@@ -49,7 +47,7 @@ class LoginScreen : AppCompatActivity() {
         binding.apply {
             btn_giris_yapiniz.setOnClickListener {
                 if (isValid()) {
-                    mailAdresi = edt_mail_adresi.text.toString().trim() // fonksiyon içinde kullanabilmek için değerleri globale tanımladık. <- ezbere gitme cümle bu
+                    mailAdresi = edt_mail_adresi.text.toString().trim()
                     sifre = edt_sifre.text.toString().trim()
                     control()
 

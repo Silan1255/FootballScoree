@@ -1,6 +1,6 @@
 package com.example.footballscore.model.maclar
 
-
+//Anladım bir bakalım google amca ne diyor
 import com.google.gson.annotations.SerializedName
 
 class GetMaclar : ArrayList<GetMaclar.GetMaclarItem>() {

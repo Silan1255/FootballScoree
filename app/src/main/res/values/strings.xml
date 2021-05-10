@@ -47,6 +47,10 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="ms">MS</string>
+    <string name="işaret">-</string>
+    <string name="fenerbah_e">Fenerbahçe</string>
+    <string name="galatasaray">Galatasaray</string>
+    <string name="title_activity_sheet1">MainActivity</string>
 
 
 </resources>

@@ -24,7 +24,6 @@ class FootballFragmentViewModel : ViewModel() {
 
     val takimlerTahmin = MutableLiveData<List<GetTahminMaclarItem>>()
     val TahminEtResponse: MutableLiveData<ResultResponse> = MutableLiveData()
-
     private fun GetData() {
         dispoosable.add(
             futbolAPIServis.getCanliMac()
@@ -39,15 +38,17 @@ class FootballFragmentViewModel : ViewModel() {
                 })
         )
     }
-    fun newUserTakim(body: SkorTahminEt) {
+
+    fun newTakimTahmin(body: SkorTahminEt) {
         dispoosable.add(
             futbolAPIServis.setNewTakim(body)
-                 .subscribeOn(Schedulers.newThread())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<ResultResponse>() {
                     override fun onSuccess(response: ResultResponse) {
                         TahminEtResponse.value = response
                     }
+
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
                     }
