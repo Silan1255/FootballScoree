@@ -10,6 +10,17 @@
     tools:context=".view.SplashSceen">
 
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/football"
+        app:lottie_autoPlay="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txt_tahmin_ediyorum"
+        app:lottie_loop="true"/>
 
 
     <TextView
@@ -19,7 +30,6 @@
         android:layout_gravity="center"
         android:layout_marginStart="5dp"
         android:layout_weight="10"
-        android:drawableTop="@drawable/running"
         android:drawablePadding="20dp"
         android:drawableTint="#407a8e"
         android:fontFamily="@font/faster_one"
@@ -28,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animationView"
         android:textColor="#407a8e"
         android:textSize="40sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
