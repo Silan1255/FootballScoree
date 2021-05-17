@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_giris_ekrani.*
 import kotlinx.android.synthetic.main.activity_kayit_ol.*
 

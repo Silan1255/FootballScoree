@@ -51,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txt_bugunki_tahminlerim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
@@ -65,7 +65,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profilUserName" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txt_onceki_tahminlerim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -76,10 +76,10 @@
             android:text="Önceki Tahminlerim"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_bugunki_tahminlerim" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txt_yorumlarim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -90,11 +90,11 @@
             android:text="Yorumlarım"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_onceki_tahminlerim" />
 
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/ttt_cikis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -105,7 +105,7 @@
             android:text="Çıkış"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_yorumlarim" />
 
 
 

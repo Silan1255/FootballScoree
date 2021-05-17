@@ -3,6 +3,7 @@ package com.example.footballscore.sevis
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
 import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
+import com.example.footballscore.model.skor_tahmin.SkorSonucItem
 import com.example.footballscore.model.skor_tahmin.SkorTahminEt
 import com.example.footballscore.model.user.GetUser.GetUserItem
 import com.example.footballscore.model.user.RegisterUserItem
@@ -42,6 +43,10 @@ class FutbolAPIServis {
 
     fun  getCanliMac(): Single<List<GetTahminMaclar.GetTahminMaclarItem>>{
         return api.getCanliMaclar()
+    }
+
+    fun  getMacGuess(userId: String): Single<List<SkorSonucItem>>{
+        return api.getMacGuess(userId)
     }
 
     fun setNewUser(body: RegisterUserItem): Single<ResultResponse> {
