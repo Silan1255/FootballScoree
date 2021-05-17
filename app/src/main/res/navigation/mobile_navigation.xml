@@ -5,15 +5,6 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.footballscore.view.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_commentFragment"
-            app:destination="@id/commentFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/fragment_quality"
@@ -32,11 +23,5 @@
         android:name="com.example.footballscore.view.FootballFragment"
         android:label="@string/title_football"
         tools:layout="@layout/fragment_football" />
-    <fragment
-        android:id="@+id/commentFragment"
-        android:name="com.example.footballscore.view.CommentFragment"
-        android:label="fragment_comment"
-        tools:layout="@layout/fragment_comment" />
-
 
 </navigation>
