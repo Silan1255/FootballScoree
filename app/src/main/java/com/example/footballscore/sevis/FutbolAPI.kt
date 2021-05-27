@@ -2,6 +2,7 @@ package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.skor.GetUserScoreItem
 import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
 import com.example.footballscore.model.skor_tahmin.SkorSonucItem
 import com.example.footballscore.model.skor_tahmin.SkorTahminEt
@@ -23,6 +24,7 @@ interface FutbolAPI {
 
     companion object {
         private const val MACLAR = "maclar"
+        private const val SKOR = "skor"
         private const val NEW_USER = "newUser"
         private const val NEW_SKOR = "newGuess"
         private const val GET_CANLI_MACLAR = "maclar"
@@ -32,6 +34,9 @@ interface FutbolAPI {
 
     @GET(MACLAR)
     fun getFutbol(): Single<List<GetMaclarItem>>
+
+    @GET(SKOR)
+    fun getSkor(): Single<List<GetUserScoreItem>>
 
     @GET(GET_USER)
     fun getUser(@Path("userId") userId: String): Single<List<GetUserItem>>

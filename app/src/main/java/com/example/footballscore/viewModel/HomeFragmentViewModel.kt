@@ -22,11 +22,7 @@ class HomeFragmentViewModel : ViewModel() {
 
     val takimler = MutableLiveData<List<GetMaclarItem>>()
     private fun verileriInternettenAl() {
-        dispoosable.add(
-            futbolAPIServis.getData()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<GetMaclarItem>>() {
+        dispoosable.add(futbolAPIServis.getData().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribeWith(object : DisposableSingleObserver<List<GetMaclarItem>>() {
                     override fun onSuccess(t: List<GetMaclarItem>) {
                         takimler.value = t.filter { macItem ->
                             macItem.macSonucu.trim().length > 2

@@ -45,7 +45,7 @@ class LoginScreen : AppCompatActivity() {
             startActivity(intent)
         }
         binding.apply {
-            btn_giris_yapiniz.setOnClickListener {
+            btnGirisYapiniz.setOnClickListener {
                 if (isValid()) {
                     mailAdresi = edt_mail_adresi.text.toString().trim()
                     sifre = edt_sifre.text.toString().trim()

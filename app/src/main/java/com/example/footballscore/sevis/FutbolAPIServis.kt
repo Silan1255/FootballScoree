@@ -2,6 +2,7 @@ package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.skor.GetUserScoreItem
 import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
 import com.example.footballscore.model.skor_tahmin.SkorSonucItem
 import com.example.footballscore.model.skor_tahmin.SkorTahminEt
@@ -35,6 +36,10 @@ class FutbolAPIServis {
 
     fun getData(): Single<List<GetMaclarItem>> {
         return api.getFutbol()
+    }
+
+    fun getSkor(): Single<List<GetUserScoreItem>> {
+        return api.getSkor()
     }
 
     fun getUser(userId : String): Single<List<GetUserItem>> {
