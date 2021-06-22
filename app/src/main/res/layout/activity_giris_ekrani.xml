@@ -9,6 +9,8 @@
     tools:context=".pages.LoginScreen">
 
 
+
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/baslik"
         android:layout_width="wrap_content"
@@ -103,5 +105,6 @@
             android:textSize="18sp"
             tools:ignore="OnClick" />
     </LinearLayout>
+
 
 </LinearLayout>

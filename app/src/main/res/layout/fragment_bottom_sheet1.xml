@@ -13,11 +13,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tahmin_iptal"
+            android:id="@+id/tahmin_yapamazsiniz1"
             android:layout_width="243dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/walter_turncoat"
-            android:text="MAÇ İPTAL EDİLDİ TAHMİN YAPAMAZSINIZ!!!"
+            android:text="MAÇ BAŞLADI TAHMİN YAPAMAZSINIZ!!!"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -25,7 +25,7 @@
             android:layout_marginTop="60dp"/>
 
         <TextView
-            android:id="@+id/tahmin_iptal2"
+            android:id="@+id/tahmin_yapamazsiniz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="140dp"

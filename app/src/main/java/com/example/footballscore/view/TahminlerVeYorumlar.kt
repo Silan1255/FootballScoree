@@ -1,5 +1,6 @@
 package com.example.footballscore.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,10 +28,7 @@ class TahminlerVeYorumlar : AppCompatActivity() {
         setContentView(binding.root)
 
         intent.getStringExtra("Key")?.let {
-            if (it.contains("comment")) {
-                binding.titleCommentPage.text = "Yorumlarım"
-            }
-            else if (it.contains("afterGuess"))
+             if (it.contains("afterGuess"))
             {
                 binding.titleCommentPage.text = "Önceki Tahminlerim"
             }else if (it.contains("todayGuess"))
@@ -39,7 +37,12 @@ class TahminlerVeYorumlar : AppCompatActivity() {
             }
         }
         tahminVeYorumlarViewModel = ViewModelProviders.of(this).get(TahminVeYorumlarViewModel::class.java)
-        tahminVeYorumlarViewModel.GetSkorData(prefHelper.getValue(this, "userId"))
+        intent.getStringExtra("userId")?.let {
+            tahminVeYorumlarViewModel.GetSkorData(it)
+        }?:run{
+            tahminVeYorumlarViewModel.GetSkorData(prefHelper.getValue(this, "userId"))
+        }
+
 
         rcy_profil.layoutManager = LinearLayoutManager(applicationContext)
         rcy_profil.adapter = skorSonucAdapter
@@ -53,9 +56,9 @@ class TahminlerVeYorumlar : AppCompatActivity() {
             TahminTakim?.let {
                 intent.getStringExtra("Key")?.let { key->
                     if (key.contains("todayGuess")) {
-                        skorSonucAdapter.gecmisSkorlariGuncelle(it.filter { getTime(it.userGuessDateTime) == currentDateandTime})
+                        skorSonucAdapter.gecmisSkorlariGuncelle(it.filter { getTime(it.userGuessDateTime) == currentDateandTime}, false)
                     }else if (key.contains("afterGuess")){
-                        skorSonucAdapter.gecmisSkorlariGuncelle(it.filter { getTime(it.userGuessDateTime) != currentDateandTime})
+                        skorSonucAdapter.gecmisSkorlariGuncelle(it.filter { getTime(it.userGuessDateTime) != currentDateandTime}, true)
                     }
                 }
             }

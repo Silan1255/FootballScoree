@@ -1,7 +1,9 @@
 package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
+import com.example.footballscore.model.guess.UserGuessCheck
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.notification.GetNotificationItem
 import com.example.footballscore.model.skor.GetUserScoreItem
 import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
 import com.example.footballscore.model.skor_tahmin.SkorSonucItem
@@ -38,6 +40,10 @@ class FutbolAPIServis {
         return api.getFutbol()
     }
 
+    fun getBildiri(): Single<List<GetNotificationItem>> {
+        return api.getBildirim()
+    }
+
     fun getSkor(): Single<List<GetUserScoreItem>> {
         return api.getSkor()
     }
@@ -60,5 +66,9 @@ class FutbolAPIServis {
 
     fun setNewTakim(body: SkorTahminEt): Single<ResultResponse> {
         return api.newSonucRegister(body)
+    }
+
+    fun chechGuess(userGuessCheck: UserGuessCheck): Single<ResultResponse>{
+        return api.checkUserGuess(userGuessCheck)
     }
 }

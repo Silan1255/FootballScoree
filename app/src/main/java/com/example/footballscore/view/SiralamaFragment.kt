@@ -1,5 +1,6 @@
 package com.example.footballscore.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,6 @@ import kotlinx.android.synthetic.main.fragment_siralama.*
 import java.util.Observer
 
 class SiralamaFragment : Fragment() {
-    lateinit var binding: FragmentSiralamaBinding
     private val siralamaAdapter = SiralamaAdapter(arrayListOf())
     private lateinit var siralamaFragmnetViewModel: SiralamaFragmentViewModel
 
@@ -29,10 +29,18 @@ class SiralamaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         siralamaFragmnetViewModel = ViewModelProviders.of(this).get(SiralamaFragmentViewModel::class.java)
         siralamaFragmnetViewModel.refreshData()
+        siralama_progressBar.visibility = View.VISIBLE
 
-            txt_siralama.layoutManager = LinearLayoutManager(context)
+
+        txt_siralama.layoutManager = LinearLayoutManager(context)
             txt_siralama.adapter = siralamaAdapter
 
+        siralamaAdapter.userClickListener = { userId->
+            var intent = Intent(context, TahminlerVeYorumlar::class.java)
+            intent.putExtra("Key", "afterGuess")
+            intent.putExtra("userId", userId)
+            startActivity(intent)
+        }
 
         observeLiveData()
     }
@@ -42,6 +50,7 @@ class SiralamaFragment : Fragment() {
               txt_siralama.visibility = View.VISIBLE
               siralamaAdapter.SiralamayiGüncelle(Skor)
             }
+            siralama_progressBar.visibility= View.GONE
         })
     }
 }

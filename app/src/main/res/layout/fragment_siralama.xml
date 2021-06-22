@@ -34,45 +34,8 @@
                 android:layout_weight="1"
                 android:text="Sıralama"
                 android:textColor="#1E3347"
-                android:textSize="18sp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:id="@+id/goNotifiList"
-                    style="?attr/actionButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_notifications_black_24dp" />
-
-                    <TextView
-                        android:id="@+id/cart_badge"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="right|end|top"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginEnd="-5dp"
-                        android:layout_marginRight="-5dp"
-                        android:background="@drawable/rounded_corner"
-                        android:gravity="center"
-                        android:padding="3dp"
-                        android:text="0"
-                        android:textColor="@android:color/white"
-                        android:textSize="10sp" />
-
-                </FrameLayout>
-            </LinearLayout>
+                android:textSize="18sp"
+                android:padding="12dp"/>
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -83,4 +46,18 @@
         android:layout_height="wrap_content"
         android:textSize="40sp"
         tools:listitem="@layout/siralama_list_item"/>
+    <ProgressBar
+        android:id="@+id/siralama_progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:layout_marginBottom="61dp"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:max="100"
+        android:minWidth="200dp"
+        android:minHeight="50dp"
+        android:progress="0"/>
 </LinearLayout>

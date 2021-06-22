@@ -45,9 +45,9 @@ class ProfilFragment : Fragment() {
             startActivity(intent)
         }
         txt_yorumlarim.setOnClickListener {
-            var intent = Intent(context, TahminlerVeYorumlar::class.java)
-            intent.putExtra("Key", "comment")
+            var intent = Intent(context, NotificationActivity::class.java)
             startActivity(intent)
+
         }
         ttt_cikis.setOnClickListener {
             val alertDialog: AlertDialog.Builder = AlertDialog.Builder(context)

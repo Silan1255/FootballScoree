@@ -16,18 +16,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userId = intent.getStringExtra("user_id")
-        val MailId = intent.getStringExtra("email_id")
-
         shredPreferenc = ShredPreferenc()
 
-        loadFragment(HomeFragment())
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navView.itemIconTintList = null
         loadFragment(HomeFragment())
     }
-
     var txtHosgeldiniz: TextView? = null
     var shredPreferenc: ShredPreferenc? = null
     var context: Context = this
