@@ -56,7 +56,6 @@ class LoginScreen : AppCompatActivity() {
 
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             prefHelper.save(this@LoginScreen,"userId", firebaseUser.uid)
-                            Toast.makeText(this@LoginScreen, "Giriş  başarılı.", Toast.LENGTH_LONG).show()
 
                             val intent = Intent(this@LoginScreen, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
     data class GetUserScoreItem(
         @SerializedName("Point")
         val point: String,
-        @SerializedName("UserID")
+        @SerializedName("UserUid")
         val userID: String,
         @SerializedName("UserName")
         val userName: String

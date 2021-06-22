@@ -1,7 +1,9 @@
 package com.example.footballscore.sevis
 
 import com.example.footballscore.model.ResultResponse
+import com.example.footballscore.model.guess.UserGuessCheck
 import com.example.footballscore.model.maclar.GetMaclar.GetMaclarItem
+import com.example.footballscore.model.notification.GetNotificationItem
 import com.example.footballscore.model.skor.GetUserScoreItem
 import com.example.footballscore.model.skor_tahmin.GetTahminMaclar
 import com.example.footballscore.model.skor_tahmin.SkorSonucItem
@@ -24,16 +26,21 @@ interface FutbolAPI {
 
     companion object {
         private const val MACLAR = "maclar"
+        private const val BILDIRIM = "notification"
         private const val SKOR = "skor"
         private const val NEW_USER = "newUser"
         private const val NEW_SKOR = "newGuess"
         private const val GET_CANLI_MACLAR = "maclar"
         private const val GET_USER = "getUser/{userId}"
         private const val GET_MAC_GUESS = "guess/{userId}"
+        private const val CHECK_GUESS = "checkGuess"
     }
 
     @GET(MACLAR)
     fun getFutbol(): Single<List<GetMaclarItem>>
+
+    @GET(BILDIRIM)
+    fun getBildirim(): Single<List<GetNotificationItem>>
 
     @GET(SKOR)
     fun getSkor(): Single<List<GetUserScoreItem>>
@@ -52,4 +59,7 @@ interface FutbolAPI {
 
     @GET(GET_MAC_GUESS)
     fun getMacGuess(@Path("userId") userId: String): Single<List<SkorSonucItem>>
+
+    @POST(CHECK_GUESS)
+    fun checkUserGuess(@Body userGuessCheck: UserGuessCheck) : Single<ResultResponse>
 }

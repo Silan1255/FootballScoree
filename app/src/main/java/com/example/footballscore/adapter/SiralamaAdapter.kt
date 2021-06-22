@@ -13,19 +13,21 @@ import kotlin.collections.ArrayList
 
 class SiralamaAdapter(val siralamaListesi: ArrayList<GetUserScoreItem>) : RecyclerView.Adapter<SiralamaAdapter.ViewHolder>() {
 
+    var userClickListener: (String) -> Unit = { _, -> }
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SiralamaAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ViewHolder {
         val inflater = LayoutInflater.from(parent.context).inflate(R.layout.siralama_list_item, parent, false)
         return ViewHolder(inflater)
     }
 
-    override fun onBindViewHolder(holder: SiralamaAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.list_siralama.text = siralamaListesi.get(position).userName
         holder.itemView.list_skor.text= siralamaListesi.get(position).point
-
-
+        holder.itemView.setOnClickListener {
+            userClickListener(siralamaListesi.get(position).userID)
+        }
     }
 
     override fun getItemCount(): Int = siralamaListesi.size
