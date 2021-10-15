@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:447058449214:android:7fba4a274f5e3d03fe526f",
         "android_client_info": {
-          "package_name": "com.example.footballscore"
+          "package_name": "com.tahmin.footballscore"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "447058449214-hi8pav4fpka49iehaqj8d331fasb988f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.footballscore",
+            "package_name": "com.tahmin.footballscore",
             "certificate_hash": "d26d9674049cb0ca012e922c03285fcced72f0ec"
           }
         },

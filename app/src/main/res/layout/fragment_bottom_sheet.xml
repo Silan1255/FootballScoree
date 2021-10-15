@@ -10,16 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:background="@drawable/new12"
+        android:background="@drawable/new1"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="135dp"
-
             android:orientation="horizontal">
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/secound"
@@ -28,7 +25,6 @@
                 android:layout_marginTop="33dp"
                 android:hint="Takim1"
                 android:textColorHint="@color/white"
-                app:hintTextAppearance="@style/EntityTextInputLayoutAppearance"
                 app:hintTextColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +37,8 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="60dp"
                     android:layout_weight="1"
-                    android:background="@drawable/blue_corner"
                     android:gravity="center"
+                    android:background="@color/transparent"
                     android:inputType="number"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
@@ -71,7 +67,7 @@
                     android:layout_gravity="left"
                     android:layout_marginRight="60dp"
                     android:layout_weight="1"
-                    android:background="@drawable/blue_corner"
+                    android:background="@color/transparent"
                     android:gravity="center"
                     android:inputType="number"
                     android:textColor="@color/white"

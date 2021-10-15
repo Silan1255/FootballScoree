@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.footballscore">
+    package="com.tahmin.footballscore">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,20 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballScore"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.NotificationActivity"></activity>
-        <activity android:name=".view.Yorumlarim" />
-        <activity android:name=".view.OncekiTahminlerim" />
-        <activity android:name=".view.TahminlerVeYorumlar" />
-        <activity
-            android:name=".sheet1"
-            android:label="@string/title_activity_sheet1" />
-        <activity
-            android:name=".view.TahminMenu"
-            android:label="@string/title_activity_tahmin_menu" />
-        <activity android:name=".view.MainActivity" />
-        <activity android:name=".pages.LoginScreen" />
-        <activity android:name=".view.KayitOl" />
-        <activity android:name=".view.SplashSceen">
+        <activity android:name="com.tahmin.footballscore.view.NotificationActivity"></activity>
+        <activity android:name="com.tahmin.footballscore.view.PredictionsFragment" />
+        <activity android:name="com.tahmin.footballscore.view.MainActivity" />
+        <activity android:name="com.tahmin.footballscore.pages.LoginScreen" />
+        <activity android:name="com.tahmin.footballscore.view.RegisterActivitiy" />
+        <activity android:name="com.tahmin.footballscore.view.SplashSceen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,6 +28,10 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4148624023284077~6491832798"/>
     </application>
 
 </manifest>

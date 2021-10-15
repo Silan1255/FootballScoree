@@ -16,7 +16,6 @@
         android:title=""
         app:showAsAction="ifRoom" />
 
-
     <item
         android:checked="false"
         android:id="@+id/navigation_sıralama"

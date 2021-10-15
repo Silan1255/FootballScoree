@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SiralamaFragment"
+    tools:context=".view.ArrangementFragment"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,6 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@android:color/white">
 
         <LinearLayout
@@ -37,9 +41,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/futbol_tahmin_listesi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       tools:listitem="@layout/tahmin_list_item" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarTahminLayout"
+       tools:listitem="@layout/predictions_list_item" />
 
     <ProgressBar
         android:id="@+id/football_progressBar"
@@ -52,7 +62,24 @@
         android:layout_gravity="center"
         android:visibility="gone"
         android:max="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:minWidth="200dp"
         android:minHeight="50dp"
         android:progress="0"/>
-</LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:adUnitId="ca-app-pub-4148624023284077/2943809337">
+    </com.google.android.gms.ads.AdView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

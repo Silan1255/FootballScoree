@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/common_google_signin_btn_text_dark"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="view.HomeFragment">
 
@@ -81,7 +81,6 @@
         android:id="@+id/iv_back"
         android:layout_width="0dp"
         android:layout_height="221dp"
-        android:contentDescription="image"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,10 +106,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/futbol_listesi"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/list_item" />
     <ProgressBar
         android:id="@+id/home_progressBar"
